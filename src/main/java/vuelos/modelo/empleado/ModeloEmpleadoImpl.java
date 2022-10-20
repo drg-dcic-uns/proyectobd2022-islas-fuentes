@@ -3,6 +3,7 @@ package vuelos.modelo.empleado;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -61,7 +62,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 	public ArrayList<String> obtenerTiposDocumento() {
 		logger.info("recupera los tipos de documentos.");
 		/** 
-		 * TODO Debe retornar una lista de strings con los tipos de documentos. 
+		 * TODO EMPEZADO Debe retornar una lista de strings con los tipos de documentos. 
 		 *      Deberia propagar una excepción si hay algún error en la consulta.
 		 */
 		
@@ -71,9 +72,24 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		 *  Como no hay una tabla con los tipos de documento, se deberán recuperar todos los tipos validos
 		 *  de la tabla de pasajeros
 		 */
+		String sql = "SELECT DISTINCT doc_tipo FROM pasajeros";
+		Statement select;
 		ArrayList<String> tipos = new ArrayList<String>();
-		tipos.add("DNI");
-		tipos.add("Pasaporte");
+		try {
+			select = conexion.createStatement();
+			ResultSet rs = select.executeQuery(sql);
+			
+			while(rs.next()) {
+				logger.debug("Se recupero el item con tipo {}", rs.getString("doc_tipo"));
+				String doc_tipo = rs.getString("doc_tipo");
+				tipos.add(doc_tipo);
+			}
+		} catch (SQLException ex) {
+			logger.error("SQLException: " + ex.getMessage());
+			logger.error("SQLState: " + ex.getSQLState());
+			logger.error("VendorError: " + ex.getErrorCode());
+			//Propagar error
+		}
 		// Fin datos estáticos de prueba.
 		
 		return tipos;
@@ -96,19 +112,28 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		
 		logger.info("recupera las ciudades que tienen aeropuertos.");
 		/** 
-		 * TODO Debe retornar una lista de UbicacionesBean con todas las ubicaciones almacenadas en la B.D. 
+		 * TODO EMPEZADO Debe retornar una lista de UbicacionesBean con todas las ubicaciones almacenadas en la B.D. 
 		 *      Deberia propagar una excepción si hay algún error en la consulta.
 		 *      
 		 *      Reemplazar el siguiente código de prueba por los datos obtenidos desde la BD.
 		 */
+		String sql = "SELECT * FROM ubicaciones;";
 		ArrayList<UbicacionesBean> ubicaciones = new ArrayList<UbicacionesBean>();
-
+		
+		Statement select = conexion.createStatement();
+		ResultSet rs = select.executeQuery(sql);
+		
+		while (rs.next()) {
+			logger.debug("Se recupero el item con pais {} , estado {} , ciudad {} y huso {}", rs.getString("pais"), rs.getString("estado"), rs.getString("ciudad"), rs.getInt("huso"));
+			UbicacionesBean ub = new UbicacionesBeanImpl();
+			ub.setCiudad(rs.getString("ciudad"));
+			ub.setEstado(rs.getString("estado"));
+			ub.setPais(rs.getString("pais"));
+			ub.setHuso(rs.getInt("huso"));
+			ubicaciones.add(ub);
+		}
 		// Datos estáticos de prueba. Quitar y reemplazar por código que recupera las ubicaciones de la B.D. en una lista de UbicacionesBean		 
-		DAOUbicacionesDatosPrueba.poblar();
-		ubicaciones.add(DAOUbicacionesDatosPrueba.obtenerUbicacion("bsas"));
-		ubicaciones.add(DAOUbicacionesDatosPrueba.obtenerUbicacion("chicago"));
-		ubicaciones.add(DAOUbicacionesDatosPrueba.obtenerUbicacion("barcelona"));
-		ubicaciones.add(DAOUbicacionesDatosPrueba.obtenerUbicacion("cordoba"));	
+		
 		// Fin datos estáticos de prueba.
 	
 		return ubicaciones;

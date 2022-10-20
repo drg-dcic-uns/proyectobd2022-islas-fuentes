@@ -1,0 +1,1765 @@
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo 125582, password 125582
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Se intenta autenticar el legajo 125582 con password 125582
+Empleado 125582 autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 4 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo 125582, password 125582
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo 125582 con password 125582
+Empleado 125582 autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 4 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:null fechaHasta:null Origen:Argentina - CABA - Buenos Aires Destino:Argentina - CABA - Buenos Aires.
+La ubicación origen es igual a la ubicación destino.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:null fechaHasta:null Origen:USA - Illinois - Chicago Destino:Argentina - CABA - Buenos Aires.
+La fecha desde no debe estar vacía.
+Crea una ventana modal informando sobre el mensaje.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo 125582, password 125582
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo 125582 con password 125582
+Empleado 125582 autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:null fechaHasta:null Origen:Italia - Lacio - Roma Destino:Argentina - Buenos Aires - Ezeiza.
+La fecha desde no debe estar vacía.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = Sun Nov 15 00:00:00 ARST 1942 AND ciudad_sale = Roma AND estado_sale = Lacio AND pais_sale = Italia AND ciudad_llega = Ezeiza AND estado_llega = Ezeiza AND pais_llega = Argentina;
+SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Nov 15 00:00:00 ARST 1942 AND ciudad_sale = Roma AND estado_sale = Lacio AND pai' at line 1
+SQLState: 42000
+VendorError: 1064
+Se produjo una excepción Error inesperado al consultar la B.D.
+Crea una ventana modal informando sobre el mensaje.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo 125582, password 125582
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo 125582 con password 125582
+Empleado 125582 autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Argentina - Buenos Aires - Ezeiza.
+La ubicación origen es igual a la ubicación destino.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = Los Angeles AND estado_sale = California AND pais_sale = Estados Unidos AND ciudad_llega = Roma AND estado_llega = Roma AND pais_llega = Italia;
+SQLException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Angeles AND estado_sale = California AND pais_sale = Estados Unidos AND ciudad_l' at line 1
+SQLState: 42000
+VendorError: 1064
+Se produjo una excepción Error inesperado al consultar la B.D.
+Crea una ventana modal informando sobre el mensaje.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Roma' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+Se produjo una excepción Unknown column 'BCNORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+Se produjo una excepción Unknown column 'EZEORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+Se produjo una excepción Unknown column 'BCNORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+Se produjo una excepción Unknown column 'BCNEZE01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Roma' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Roma' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+Se produjo una excepción Unknown column 'EZEORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+Se produjo una excepción Unknown column 'BCNEZE01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+Se produjo una excepción Unknown column 'BCNORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = 'Roma' AND estado_sale = 'Lacio' AND pais_sale = 'Italia' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+Se produjo una excepción Unknown column 'EZEORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+Se produjo una excepción Unknown column 'BCNEZE01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+Se produjo una excepción Unknown column 'EZEBCN01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+Se produjo una excepción Unknown column 'BCNEZE01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:null fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Argentina - Buenos Aires - Ezeiza.
+La ubicación origen es igual a la ubicación destino.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Argentina - Buenos Aires - Ezeiza.
+La ubicación origen es igual a la ubicación destino.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+Se produjo una excepción Unknown column 'EZEORD01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 42-10-0 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+Se produjo una excepción Unknown column 'EZEBCN01' in 'where clause'
+Crea una ventana modal informando sobre el mensaje.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Roma' AND estado_llega = 'Roma' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Se deseleccionó el vuelo
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Ezeiza' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Se solicita quitar todas las selecciones.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de solo IDA.
+Valida que haya seleccionado todo e informa a la ventana que muestre la pantalla de reserva.
+Crea una ventana modal informando sobre el mensaje.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Se deseleccionó el vuelo
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:true fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+La fecha hasta no debe estar vacía.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:true fechaDesde:15 fechaHasta:15 Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida y vuelta
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Ezeiza' AND pais_llega = 'Argentina';
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos ida es 4 y los vuelos de vuelta es 4
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida y vuelta
+Carga la tabla de IDA.
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNEZE01';
+Se recuperaron 0 clases para el vuelo BCNEZE01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNEZE01';
+Se recuperaron 0 clases para el vuelo BCNEZE01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de IDA en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de vuelta.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de Vuelta en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de vuelta.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de Vuelta en viaje de Ida y Vuelta.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para ida y vuelta sobre el vuelo de vuelta.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de Vuelta en viaje de Ida y Vuelta.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEBCN01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEBCN01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEBCN01';
+Se recuperaron 0 clases para el vuelo EZEBCN01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo EZEORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo EZEORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'EZEORD01';
+Se recuperaron 0 clases para el vuelo EZEORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNEZE01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNEZE01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNEZE01';
+Se recuperaron 0 clases para el vuelo BCNEZE01
+Carga el detalle tabla de detalle de solo IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+debe informar al controlador para que recupere la info del detalle
+Se deseleccionó el vuelo
+debe informar al controlador para que recupere la info del detalle
+Se deseleccionó el vuelo
+Se solicita quitar todas las selecciones.
+Se solicita quitar todas las selecciones.
+Se solicita quitar todas las selecciones.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:null fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+La fecha desde no debe estar vacía.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942/11/15 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942-11-15 AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Roma' AND estado_llega = 'Roma' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Se solicita quitar todas las selecciones.
+Se solicita quitar todas las selecciones.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = 1942-11-15 AND ciudad_sale = 'Roma' AND estado_sale = 'Lacio' AND pais_sale = 'Italia' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'Los Angeles' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Ezeiza' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Roma' AND estado_sale = 'Lacio' AND pais_sale = 'Italia' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'California' AND pais_llega = 'Estados Unidos';
+SQLException: Column 'nombre_batalla' not found.
+SQLState: S0022
+VendorError: 0
+Se produjo una excepción Error inesperado al consultar la B.D.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Lacio' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 4 
+Se solicita a la ventana mostrar la información de 4 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+SQLException: Column 'nombre_batalla' not found.
+SQLState: S0022
+VendorError: 0
+Se produjo una excepción Error inesperado al consultar la B.D.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+SQLException: Column 'nombre_batalla' not found.
+SQLState: S0022
+VendorError: 0
+Se produjo una excepción Error inesperado al consultar la B.D.
+Crea una ventana modal informando sobre el mensaje.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 7 
+Se solicita a la ventana mostrar la información de 7 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo BCNORD01 con fecha 1969-12-31 para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo BCNORD01 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = 'BCNORD01';
+Se recuperaron 0 clases para el vuelo BCNORD01
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Estados Unidos - California - Los Angeles.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'California' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Estados Unidos - California - Los Angeles.
+La ubicación origen es igual a la ubicación destino.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Lacio' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Italia - Lacio - Roma.
+La ubicación origen es igual a la ubicación destino.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Argentina - Buenos Aires - Ezeiza Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Argentina - Buenos Aires - Ezeiza a Italia - Lacio - Roma.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Ezeiza' AND estado_sale = 'Buenos Aires' AND pais_sale = 'Argentina' AND ciudad_llega = 'Roma' AND estado_llega = 'Lacio' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 3 
+Se solicita a la ventana mostrar la información de 3 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Lacio' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 3 
+Se solicita a la ventana mostrar la información de 3 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Se deseleccionó el vuelo
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 3 
+Se solicita a la ventana mostrar la información de 3 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Italia - Lacio - Roma.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Italia - Lacio - Roma.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Roma' AND estado_llega = 'Lacio' AND pais_llega = 'Italia';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Roma' AND estado_sale = 'Lacio' AND pais_sale = 'Italia' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 3 
+Se solicita a la ventana mostrar la información de 3 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+Se inicia la aplicación.
+Creación de la ventana de login
+Se registran los listeners.
+Se inicia la carga de parametros para conectar con la BD.
+Recuperación de los datos para la conexión con la BD
+Se intenta leer el archivo de propiedades cfg/conexionBD.properties
+se cargó exitosamente
+Parámetros de conexión: jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires
+Se inicializa la ventana de login.
+se registra el controlador.
+se muestra la ventana.
+Intenta ingresar como Empleado con legajo , password 
+Recupera el usuario de BD para Empleado para poder conectarse con los permisos de dicho usuario.
+Ingresa a recuperar el usuarioBD y passwordBD para acceder a la BD del usuario Empleado
+usuario empleado, password empleado
+Se crea el modelo Empleado.
+Se establece la conexión a la BD.
+Parametros de conexion: url= jdbc:mysql://localhost:3306/vuelos?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Argentina/Buenos_Aires, user=empleado, pass=empleado
+Se establece la conexión con la BD
+Se intenta autenticar el legajo  con password 
+Empleado  autenticado
+Inicializacion de la ventana del Empleado
+Se registran los listeners.
+Se crea el controlador del Empleado.
+Transfiere el control al nuevo controlador
+Solicita al DAO un empleado con legajo 1
+recupera el empleado que corresponde al legajo 1.
+Se registra al empleado ApEmp9, NomEmp9 con legajo 9
+muestra la ventana
+Recuperar del modelo los destinos posibles
+recupera las ciudades que tienen aeropuertos.
+Se recupero el item con pais Argentina , estado Buenos Aires , ciudad Ezeiza y huso 4
+Se recupero el item con pais Estados Unidos , estado California , ciudad Los Angeles y huso -3
+Se recupero el item con pais Italia , estado Lacio , ciudad Roma y huso 10
+informar a la ventana los destinos posibles
+Carga los combos de ciudades con las 3 ubicaciones recuperados
+Muestra el panel de consulta/reserva de vuelos.
+Informa a la vista que puede eliminar la ventana de login.
+Eliminación de la ventana de login.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:null fechaHasta:null Origen:Italia - Lacio - Roma Destino:Estados Unidos - California - Los Angeles.
+La fecha desde no debe estar vacía.
+Crea una ventana modal informando sobre el mensaje.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Estados Unidos - California - Los Angeles.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Estados Unidos - California - Los Angeles.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Roma' AND estado_sale = 'Lacio' AND pais_sale = 'Italia' AND ciudad_llega = 'Los Angeles' AND estado_llega = 'California' AND pais_llega = 'Estados Unidos';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Italia - Lacio - Roma Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Italia - Lacio - Roma a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Roma' AND estado_sale = 'Lacio' AND pais_sale = 'Italia' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+debe informar al controlador para que recupere la info del detalle
+Solicita detalle del vuelo 710 con fecha null para un viaje de ida.
+Recupera la cantidad de asientos y precio del vuelo 710 .
+SQL: SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '710';
+Se recupero el item con clase ejecutiva , precio 15000.00 y asientos_disponibles 28
+Se recupero el item con clase primera , precio 20000.00 y asientos_disponibles 60
+Se recupero el item con clase turista , precio 9000.90 y asientos_disponibles 168
+Se recuperaron 3 clases para el vuelo 710
+Carga el detalle tabla de detalle de solo IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
+Ejecuta el listener de buscar vuelos disponibles.
+Solicita información de vuelos disponibles: esIdaVuelta:false fechaDesde:15 fechaHasta:null Origen:Estados Unidos - California - Los Angeles Destino:Argentina - Buenos Aires - Ezeiza.
+Se solicita quitar todas las selecciones.
+Solicita información de vuelos disponibles de ida
+Recupera la lista de vuelos disponibles para la fecha Sun Nov 15 00:00:00 ARST 1942 desde Estados Unidos - California - Los Angeles a Argentina - Buenos Aires - Ezeiza.
+SQL: SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '1942-11-15' AND ciudad_sale = 'Los Angeles' AND estado_sale = 'California' AND pais_sale = 'Estados Unidos' AND ciudad_llega = 'Ezeiza' AND estado_llega = 'Buenos Aires' AND pais_llega = 'Argentina';
+La cantidad de vuelos recuperados es 0 
+Se solicita a la ventana mostrar la información de 0 vuelos para viaje de ida
+Carga la tabla de IDA.
+Saliendo de la aplicación.
+Se cierra la conexión a la BD.
+Se intenta cerrar la conexión activa
+Eliminación de la ventana.
