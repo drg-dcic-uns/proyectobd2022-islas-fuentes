@@ -5,13 +5,13 @@ import java.util.Arrays;
 //CLASE IMPLEMENTADA PROVISTA POR LA CATEDRA
 // Representa un usuario del servidor de bases de datos (MySQL) a través del cual se realizaran las conexiones 
 public class UsuarioBeanImpl implements UsuarioBean {
-	
-	private static final long serialVersionUID = 1L;	
-	
+
+	private static final long serialVersionUID = 1L;
+
 	private String username;
 	private String displayname;
 	private String password;
-	
+
 	public UsuarioBeanImpl() {
 	}
 
@@ -38,6 +38,5 @@ public class UsuarioBeanImpl implements UsuarioBean {
 	public void setDisplayname(String displayname) {
 		this.displayname = displayname;
 	}
-	
-}
 
+}

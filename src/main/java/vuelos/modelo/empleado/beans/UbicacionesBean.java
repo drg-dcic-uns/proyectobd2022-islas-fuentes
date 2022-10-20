@@ -41,7 +41,7 @@ public interface UbicacionesBean {
 	 * @param nroCliente the nroCliente to set
 	 */
 	void setHuso(int huso);
-	
+
 	/**
 	 * Permite mostrar en los combos la propiedad deseada.
 	 */

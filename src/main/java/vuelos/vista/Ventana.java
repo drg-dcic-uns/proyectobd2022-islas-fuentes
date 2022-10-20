@@ -7,20 +7,21 @@ public interface Ventana {
 	 * 
 	 * @throws Exception si la ventana no existe.
 	 */
-	public void mostrarVentana() throws Exception; 
-	
+	public void mostrarVentana() throws Exception;
+
 	/**
 	 * Informa a la vista que debe eliminar la ventana.
 	 * 
-	 * La eliminación es explícita. 
+	 * La eliminación es explícita.
 	 */
 	public void eliminarVentana();
-	
+
 	/**
-	 * Informa a la vista que debe mostrar al usuario un mensaje que es pasado como parámetro.
+	 * Informa a la vista que debe mostrar al usuario un mensaje que es pasado como
+	 * parámetro.
 	 * 
 	 * @param mensaje
 	 */
 	public void informar(String mensaje);
-	
+
 }

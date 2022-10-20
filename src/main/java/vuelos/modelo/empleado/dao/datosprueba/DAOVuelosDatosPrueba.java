@@ -21,14 +21,14 @@ Una vez completada la implementacion esta clase ya no se utilizará. */
 public class DAOVuelosDatosPrueba {
 
 	private static Logger logger = LoggerFactory.getLogger(DAOVuelosDatosPrueba.class);
-	
+
 	public static ArrayList<InstanciaVueloBean> generarVuelos(Date fechaVuelo) {
-		
-		DAOUbicacionesDatosPrueba.poblar();		
-		UbicacionesBean bsas = DAOUbicacionesDatosPrueba.obtenerUbicacion("bsas");		
-		UbicacionesBean chicago = DAOUbicacionesDatosPrueba.obtenerUbicacion("chicago");		
-		UbicacionesBean barcelona = DAOUbicacionesDatosPrueba.obtenerUbicacion("barcelona");		
-		
+
+		DAOUbicacionesDatosPrueba.poblar();
+		UbicacionesBean bsas = DAOUbicacionesDatosPrueba.obtenerUbicacion("bsas");
+		UbicacionesBean chicago = DAOUbicacionesDatosPrueba.obtenerUbicacion("chicago");
+		UbicacionesBean barcelona = DAOUbicacionesDatosPrueba.obtenerUbicacion("barcelona");
+
 		AeropuertoBean ezeiza = new AeropuertoBeanImpl();
 		ezeiza.setCodigo("EZE");
 		ezeiza.setNombre("Ministro Pistarini");
@@ -38,14 +38,14 @@ public class DAOVuelosDatosPrueba {
 		ohare.setCodigo("ORD");
 		ohare.setNombre("O'Hare Intl.");
 		ohare.setUbicacion(chicago);
-		
+
 		AeropuertoBean bcn = new AeropuertoBeanImpl();
 		bcn.setCodigo("BCN");
 		bcn.setNombre("Barcelona Intl.");
 		bcn.setUbicacion(barcelona);
-		
+
 		ArrayList<InstanciaVueloBean> vuelosDisponibles = new ArrayList<InstanciaVueloBean>();
-		
+
 		InstanciaVueloBean vuelo1 = new InstanciaVueloBeanImpl();
 		vuelo1.setNroVuelo("EZEORD01");
 		vuelo1.setModelo("Boeing 747");
@@ -57,7 +57,7 @@ public class DAOVuelosDatosPrueba {
 		vuelo1.setAeropuertoSalida(ezeiza);
 		vuelo1.setAeropuertoLlegada(ohare);
 		vuelosDisponibles.add(vuelo1);
-		
+
 		InstanciaVueloBean vuelo2 = new InstanciaVueloBeanImpl();
 		vuelo2.setNroVuelo("EZEBCN01");
 		vuelo2.setModelo("Airbus A320");
@@ -81,7 +81,7 @@ public class DAOVuelosDatosPrueba {
 		vuelo3.setAeropuertoSalida(bcn);
 		vuelo3.setAeropuertoLlegada(ohare);
 		vuelosDisponibles.add(vuelo3);
-		
+
 		InstanciaVueloBean vuelo4 = new InstanciaVueloBeanImpl();
 		vuelo4.setNroVuelo("BCNEZE01");
 		vuelo4.setModelo("Airbus A330");
@@ -93,12 +93,12 @@ public class DAOVuelosDatosPrueba {
 		vuelo4.setAeropuertoSalida(bcn);
 		vuelo4.setAeropuertoLlegada(ezeiza);
 		vuelosDisponibles.add(vuelo4);
-		
-		return vuelosDisponibles;		
+
+		return vuelosDisponibles;
 	}
-	
+
 	public static ArrayList<DetalleVueloBean> generarDetalles(InstanciaVueloBean vuelo) {
-		
+
 		ArrayList<DetalleVueloBean> detallesVuelo = new ArrayList<DetalleVueloBean>();
 		DetalleVueloBean detalle1 = new DetalleVueloBeanImpl();
 		DetalleVueloBean detalle2 = new DetalleVueloBeanImpl();
@@ -106,67 +106,67 @@ public class DAOVuelosDatosPrueba {
 		detalle1.setVuelo(vuelo);
 		detalle2.setVuelo(vuelo);
 		detalle3.setVuelo(vuelo);
-		
+
 		switch (vuelo.getNroVuelo()) {
-			case "EZEORD01":
-				detalle1.setClase("Primera");
-				detalle1.setPrecio(82350);				
-				detalle1.setAsientosDisponibles(4);
+		case "EZEORD01":
+			detalle1.setClase("Primera");
+			detalle1.setPrecio(82350);
+			detalle1.setAsientosDisponibles(4);
 
-				detalle2.setClase("Turista");
-				detalle2.setPrecio(41876);
-				detalle2.setAsientosDisponibles(16);
+			detalle2.setClase("Turista");
+			detalle2.setPrecio(41876);
+			detalle2.setAsientosDisponibles(16);
 
-				detallesVuelo.add(detalle1);
-				detallesVuelo.add(detalle2);
-				break;
-			case "EZEBCN01": 
-				detalle1.setClase("Ejecutiva");
-				detalle1.setPrecio(67252);
-				detalle1.setAsientosDisponibles(8);
+			detallesVuelo.add(detalle1);
+			detallesVuelo.add(detalle2);
+			break;
+		case "EZEBCN01":
+			detalle1.setClase("Ejecutiva");
+			detalle1.setPrecio(67252);
+			detalle1.setAsientosDisponibles(8);
 
-				detalle2.setClase("Primera");
-				detalle2.setPrecio(39650);
-				detalle2.setAsientosDisponibles(12);
+			detalle2.setClase("Primera");
+			detalle2.setPrecio(39650);
+			detalle2.setAsientosDisponibles(12);
 
-				detalle3.setClase("Turista");
-				detalle3.setPrecio(28670);
-				detalle3.setAsientosDisponibles(23);
+			detalle3.setClase("Turista");
+			detalle3.setPrecio(28670);
+			detalle3.setAsientosDisponibles(23);
 
-				detallesVuelo.add(detalle1);
-				detallesVuelo.add(detalle2);
-				detallesVuelo.add(detalle3);
-				break;
-			case "BCNORD01":
-				detalle1.setClase("Business");
-				detalle1.setPrecio(16470);
-				detalle1.setAsientosDisponibles(29);
+			detallesVuelo.add(detalle1);
+			detallesVuelo.add(detalle2);
+			detallesVuelo.add(detalle3);
+			break;
+		case "BCNORD01":
+			detalle1.setClase("Business");
+			detalle1.setPrecio(16470);
+			detalle1.setAsientosDisponibles(29);
 
-				detalle2.setClase("Economy");
-				detalle2.setPrecio(8845);
-				detalle2.setAsientosDisponibles(34);
+			detalle2.setClase("Economy");
+			detalle2.setPrecio(8845);
+			detalle2.setAsientosDisponibles(34);
 
-				detallesVuelo.add(detalle1);
-				detallesVuelo.add(detalle2);
-				break;
-			case "BCNEZE01":
-				detalle1.setClase("First Class");
-				detalle1.setPrecio(99675);
-				detalle1.setAsientosDisponibles(0);
+			detallesVuelo.add(detalle1);
+			detallesVuelo.add(detalle2);
+			break;
+		case "BCNEZE01":
+			detalle1.setClase("First Class");
+			detalle1.setPrecio(99675);
+			detalle1.setAsientosDisponibles(0);
 
-				detalle2.setClase("Premium Economy");
-				detalle2.setPrecio(51850);
-				detalle2.setAsientosDisponibles(3);
+			detalle2.setClase("Premium Economy");
+			detalle2.setPrecio(51850);
+			detalle2.setAsientosDisponibles(3);
 
-				detalle3.setClase("Economy");
-				detalle3.setPrecio(32025);
-				detalle3.setAsientosDisponibles(27);
+			detalle3.setClase("Economy");
+			detalle3.setPrecio(32025);
+			detalle3.setAsientosDisponibles(27);
 
-				detallesVuelo.add(detalle1);
-				detallesVuelo.add(detalle2);
-				detallesVuelo.add(detalle3);				
-				break;
+			detallesVuelo.add(detalle1);
+			detallesVuelo.add(detalle2);
+			detallesVuelo.add(detalle3);
+			break;
 		}
 		return detallesVuelo;
-	}	
+	}
 }

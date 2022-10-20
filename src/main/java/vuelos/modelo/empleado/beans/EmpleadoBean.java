@@ -1,7 +1,7 @@
 package vuelos.modelo.empleado.beans;
 
 public interface EmpleadoBean {
-	
+
 	/**
 	 * @return el legajo
 	 */
@@ -72,7 +72,6 @@ public interface EmpleadoBean {
 	 */
 	void setTelefono(String telefono);
 
-	
 	/**
 	 * @return Password
 	 */
@@ -81,6 +80,6 @@ public interface EmpleadoBean {
 	/**
 	 * @param Password
 	 */
-	void setPassword(String password);	
-		
+	void setPassword(String password);
+
 }

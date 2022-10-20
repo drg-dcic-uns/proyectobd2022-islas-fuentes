@@ -12,12 +12,11 @@ import vuelos.modelo.ModeloLoginImpl;
 import vuelos.vista.login.VentanaLogin;
 import vuelos.vista.login.VentanaLoginImpl;
 
-
 // CLASE IMPLEMENTADA PROVISTA POR LA CATEDRA
 public class Vuelo {
 
 	private static Logger logger = LoggerFactory.getLogger(Vuelo.class);
-	
+
 	/**
 	 * Método para iniciar la aplicación
 	 * 
@@ -26,14 +25,14 @@ public class Vuelo {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					
+
 					logger.debug("Se inicia la aplicación.");
-					
-					ModeloLogin modelo = new ModeloLoginImpl();  
+
+					ModeloLogin modelo = new ModeloLoginImpl();
 					VentanaLogin ventana = new VentanaLoginImpl();
 					@SuppressWarnings("unused")
 					ControladorLogin controlador = new ControladorLoginImpl(ventana, modelo);
-					
+
 				} catch (Exception e) {
 					logger.error(e.getMessage());
 					e.printStackTrace();

@@ -10,17 +10,20 @@ import vuelos.modelo.empleado.beans.UbicacionesBean;
 public interface DAOVuelos {
 
 	/**
-	 * Recupera las instancias de vuelo que correponden a la fecha, origen y destino dados.
+	 * Recupera las instancias de vuelo que correponden a la fecha, origen y destino
+	 * dados.
 	 * 
 	 * @param fechaVuelo
 	 * @param origen
 	 * @param destino
 	 * @return
 	 */
-	ArrayList<InstanciaVueloBean> recuperarVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen, UbicacionesBean destino) throws Exception;
+	ArrayList<InstanciaVueloBean> recuperarVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen,
+			UbicacionesBean destino) throws Exception;
 
 	/**
-	 * Recupera las clases, asientos disponibles de cada clase y precio del vuelo pasado por parametro.
+	 * Recupera las clases, asientos disponibles de cada clase y precio del vuelo
+	 * pasado por parametro.
 	 * 
 	 * @param vuelo
 	 * @return

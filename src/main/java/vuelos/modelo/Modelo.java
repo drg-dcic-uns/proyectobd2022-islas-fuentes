@@ -13,18 +13,18 @@ public interface Modelo {
 	 * @return verdadero si pudo conectar, falso en caso contrario.
 	 */
 	public boolean conectar(String username, String password);
-	
-	public void desconectar();
-	
-	/**
-	  * Método encargado de realizar una consulta SQL recibida como parámetro.
-	  */
-	public ResultSet consulta(String sql);
-	
-	/**
-	  * Método encargado de ejecutar una actualizacion en la base de datos con la sentencia SQL recibida por parámetro
-	  */
-	public void actualizacion (String sql);
 
+	public void desconectar();
+
+	/**
+	 * Método encargado de realizar una consulta SQL recibida como parámetro.
+	 */
+	public ResultSet consulta(String sql);
+
+	/**
+	 * Método encargado de ejecutar una actualizacion en la base de datos con la
+	 * sentencia SQL recibida por parámetro
+	 */
+	public void actualizacion(String sql);
 
 }

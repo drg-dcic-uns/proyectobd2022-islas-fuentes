@@ -23,10 +23,9 @@ public class VentanaLoginImpl extends JFrame implements VentanaLogin {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public VentanaLoginImpl()
-	{
+	public VentanaLoginImpl() {
 		logger.info("Creación de la ventana de login");
-				
+
 		this.inicializar();
 	}
 
@@ -39,78 +38,71 @@ public class VentanaLoginImpl extends JFrame implements VentanaLogin {
 	@Override
 	public void informar(String mensaje) {
 		logger.info("Crea una ventana modal informando: {}.", mensaje);
-		
-		JOptionPane.showMessageDialog(null,mensaje);
+
+		JOptionPane.showMessageDialog(null, mensaje);
 	}
 
 	@Override
 	public void mostrarVentana() throws Exception {
-		this.setVisible(true);		
+		this.setVisible(true);
 	}
 
 	@Override
 	public void registrarControlador(ControladorLogin controlador) {
 		this.controlador = controlador;
 	}
-	
+
 	private String getUserName() {
 
 		String username = null;
-		
+
 		username = (String) this.getCampoEmpleadoUsername().getText();
 
 		return username;
 	}
 
-	
-	private char[] getPassword() {		
+	private char[] getPassword() {
 
 		char[] password = null;
-		
+
 		password = this.getCampoEmpleadoPassword().getPassword();
-		
+
 		return password;
-		
+
 	}
-	
+
 	/*
 	 * Propiedades y m{etodos privados y protegidos
 	 * 
 	 * 
 	 */
 	protected ControladorLogin controlador;
-	 
-	
-	protected JPanel mainPanel;	
 
-	protected JPanel panelLogin;	
-	protected CardLayout loginLayout;	
+	protected JPanel mainPanel;
+
+	protected JPanel panelLogin;
+	protected CardLayout loginLayout;
 
 	// Card Empleado
 	protected JTextField campoEmpleadoUsername;
 	protected JPasswordField campoEmpleadoPassword;
-	
-	protected JButton btnAceptarLogin;	
+
+	protected JButton btnAceptarLogin;
 	protected JButton btnCancelarLogin;
-	
+
 	/**
-	  * Método encargado de inicializar todos los componentes de la ventana para logguearse
-	  * 
-	  * BorderLayout
-	  * 
-	  * +--------------------------------------+
-	  * |               PAGE_START             |
-	  * +--------------+----------+------------+
-	  * |              |          |            |
-	  * |  LINE_START  |  CENTER  |  LINE_END  |
-	  * |              |          |            |
-	  * +--------------+----------+------------+
-	  * |               PAGE_END               |
-	  * +--------------+----------+------------+
-	  * 
-	  */
-	private void inicializar()
-	{
+	 * Método encargado de inicializar todos los componentes de la ventana para
+	 * logguearse
+	 * 
+	 * BorderLayout
+	 * 
+	 * +--------------------------------------+ | PAGE_START |
+	 * +--------------+----------+------------+ | | | | | LINE_START | CENTER |
+	 * LINE_END | | | | | +--------------+----------+------------+ | PAGE_END |
+	 * +--------------+----------+------------+
+	 * 
+	 */
+	private void inicializar() {
 		this.setType(Type.POPUP);
 		this.setTitle("Ingreso al Sistema");
 		this.setResizable(false);
@@ -120,36 +112,36 @@ public class VentanaLoginImpl extends JFrame implements VentanaLogin {
 		this.mainPanel = new JPanel();
 		this.mainPanel.setLayout(new BorderLayout());
 		this.mainPanel.setBorder(new LineBorder(new Color(0, 0, 0), 1, true));
-				
-		//this.mainPanel.add(this.crearPanelTipoUsuario(), BorderLayout.PAGE_START);
-		this.mainPanel.add(this.crearPanelLogin(), BorderLayout.CENTER);		
+
+		// this.mainPanel.add(this.crearPanelTipoUsuario(), BorderLayout.PAGE_START);
+		this.mainPanel.add(this.crearPanelLogin(), BorderLayout.CENTER);
 		this.mainPanel.add(this.crearPanelButtons(), BorderLayout.PAGE_END);
 
 		logger.debug("Se registran los listeners.");
 		this.registrarEventos();
-		
+
 		this.setContentPane(this.mainPanel);
 		this.pack();
 		this.setVisible(true);
-		
-		//this.loginLayout.show(this.panelLogin, "empleado");
+
+		// this.loginLayout.show(this.panelLogin, "empleado");
 	}
 
 	/**
-	 * Crea el panel de la botonera 
+	 * Crea el panel de la botonera
 	 * 
 	 * @return JPanel
 	 */
 	private JPanel crearPanelButtons() {
-		
+
 		JPanel panelButtons = new JPanel();
-		
+
 		btnAceptarLogin = new JButton("Aceptar");
 		panelButtons.add(btnAceptarLogin);
 
 		btnCancelarLogin = new JButton("Cancelar");
 		panelButtons.add(btnCancelarLogin);
-		
+
 		return panelButtons;
 	}
 
@@ -157,24 +149,24 @@ public class VentanaLoginImpl extends JFrame implements VentanaLogin {
 	 * Panel que permite ingresar los datos
 	 */
 	private JPanel crearPanelLogin() {
-		
+
 		this.loginLayout = new CardLayout();
-		
+
 		this.panelLogin = new JPanel();
 		this.panelLogin.setLayout(this.loginLayout);
-		
-		this.panelLogin.add(this.crearPanelLoginEmpleado(),"empleado");
-		
+
+		this.panelLogin.add(this.crearPanelLoginEmpleado(), "empleado");
+
 		return this.panelLogin;
 	}
-	
+
 	private JPanel crearPanelLoginEmpleado() {
-		
+
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, BoxLayout.PAGE_AXIS));
-		
+
 		JPanel panelFila1 = new JPanel();
-		((FlowLayout) panelFila1.getLayout()).setHgap(25);		
+		((FlowLayout) panelFila1.getLayout()).setHgap(25);
 
 		JLabel lblUsername = new JLabel("Legajo:");
 		this.campoEmpleadoUsername = new JTextField();
@@ -182,23 +174,23 @@ public class VentanaLoginImpl extends JFrame implements VentanaLogin {
 
 		panelFila1.add(lblUsername);
 		panelFila1.add(this.campoEmpleadoUsername);
-		
+
 		JPanel panelFila2 = new JPanel();
-				
+
 		JLabel lblPasswordLogin = new JLabel("Contraseña:");
-				
+
 		this.campoEmpleadoPassword = new JPasswordField();
 		this.campoEmpleadoPassword.setColumns(10);
 
-		panelFila2.add(lblPasswordLogin);		
+		panelFila2.add(lblPasswordLogin);
 		panelFila2.add(this.campoEmpleadoPassword);
-		
+
 		panel.add(panelFila1);
 		panel.add(panelFila2);
-		
+
 		return panel;
 	}
-	
+
 	/*
 	 * Setters y Getters
 	 * 
@@ -227,26 +219,26 @@ public class VentanaLoginImpl extends JFrame implements VentanaLogin {
 	 */
 	protected void registrarEventos() {
 
-		this.getCampoEmpleadoUsername().addActionListener(this.getIngresarListener());		
+		this.getCampoEmpleadoUsername().addActionListener(this.getIngresarListener());
 		this.getCampoEmpleadoPassword().addActionListener(this.getIngresarListener());
 
-		this.getBtnAceptarLogin().addActionListener(this.getIngresarListener());		
-		this.getBtnCancelarLogin().addActionListener(this.getCancelarListener());		
+		this.getBtnAceptarLogin().addActionListener(this.getIngresarListener());
+		this.getBtnCancelarLogin().addActionListener(this.getCancelarListener());
 	}
-	
+
 	protected ActionListener getIngresarListener() {
 		return new ActionListener() {
-			public void actionPerformed(ActionEvent e){
-            	controlador.ingresarComoEmpleado(getUserName(),getPassword());
-            }
-        };
+			public void actionPerformed(ActionEvent e) {
+				controlador.ingresarComoEmpleado(getUserName(), getPassword());
+			}
+		};
 	}
 
 	protected ActionListener getCancelarListener() {
 		return new ActionListener() {
-			public void actionPerformed(ActionEvent e){
+			public void actionPerformed(ActionEvent e) {
 				System.exit(0);
-            }
-        };
-	}	
+			}
+		};
+	}
 }

@@ -4,12 +4,12 @@ import java.sql.Date;
 import java.util.ArrayList;
 
 public interface ReservaBean {
-	
+
 	public int getNumero();
 
 	public void setNumero(int numero);
-	
-	// ATENCION: es importante setear este parametro al crear el objeto 
+
+	// ATENCION: es importante setear este parametro al crear el objeto
 	boolean esIdaVuelta();
 
 	void setEsIdaVuelta(boolean esIdaVuelta);
@@ -34,9 +34,9 @@ public interface ReservaBean {
 
 	public void setEmpleado(EmpleadoBean empleado);
 
-	/** 
+	/**
 	 * Obtiene la lista de instancias de vuelos y la clase asociada para la reserva
-	 *  
+	 * 
 	 * @return
 	 */
 	public ArrayList<InstanciaVueloClaseBean> getVuelosClase();

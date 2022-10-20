@@ -1,6 +1,6 @@
 package vuelos.controlador;
 
-public interface ControladorLogin { 
+public interface ControladorLogin {
 
 	/**
 	 * Informa al controlador que se desea ingresar con un usuario con rol EMPLEADO
@@ -9,5 +9,5 @@ public interface ControladorLogin {
 	 * @param password
 	 */
 	public void ingresarComoEmpleado(String legajo, char[] password);
-	
+
 }

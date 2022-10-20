@@ -7,12 +7,12 @@ public interface DetalleVueloBean {
 	void setVuelo(InstanciaVueloBean vuelo);
 
 	String getClase();
-	
+
 	void setClase(String clase);
-	
+
 	float getPrecio();
 
-	void setPrecio(float precio);	
+	void setPrecio(float precio);
 
 	int getAsientosDisponibles();
 

@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 public class EmpleadoBeanImpl implements Serializable, EmpleadoBean {
 
 	private static Logger logger = LoggerFactory.getLogger(EmpleadoBeanImpl.class);
-	
+
 	private static final long serialVersionUID = 1L;
 
 	private int legajo;
@@ -17,11 +17,10 @@ public class EmpleadoBeanImpl implements Serializable, EmpleadoBean {
 	private String nombre;
 	private String tipoDocumento;
 	private int nroDocumento;
-	private String direccion;	
-	private String telefono;	
+	private String direccion;
+	private String telefono;
 	private String password;
-	
-	
+
 	@Override
 	public int getLegajo() {
 		return legajo;
@@ -29,9 +28,9 @@ public class EmpleadoBeanImpl implements Serializable, EmpleadoBean {
 
 	@Override
 	public void setLegajo(int legajo) {
-		this.legajo =  legajo;		
+		this.legajo = legajo;
 	}
-	
+
 	@Override
 	public String getApellido() {
 		return apellido;
@@ -92,8 +91,6 @@ public class EmpleadoBeanImpl implements Serializable, EmpleadoBean {
 		this.telefono = telefono;
 	}
 
-
-
 	@Override
 	public String getPassword() {
 		return password;
@@ -101,8 +98,7 @@ public class EmpleadoBeanImpl implements Serializable, EmpleadoBean {
 
 	@Override
 	public void setPassword(String password) {
-		this.password = password;		
+		this.password = password;
 	}
 
-	
 }

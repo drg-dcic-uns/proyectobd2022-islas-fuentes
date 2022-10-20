@@ -11,6 +11,5 @@ public interface VentanaLogin extends Ventana {
 	 * @param controlador
 	 */
 	public void registrarControlador(ControladorLogin controlador);
-		
-	
+
 }
