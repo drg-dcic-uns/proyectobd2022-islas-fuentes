@@ -48,18 +48,12 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		String sql = "SELECT legajo, password FROM empleados WHERE legajo = '"+legajo+"' AND password = md5('"+password+"');";
 		
 		logger.debug("SQL: {}",sql);
-		try {
-			Statement select = conexion.createStatement();
-			ResultSet rs= select.executeQuery(sql);
-			if(rs.next()) {
-				this.legajo = rs.getInt("legajo");
-				autenticado = true;
-			}
-		} catch (SQLException ex) {
-			logger.error("SQLException: " + ex.getMessage());
-			logger.error("SQLState: " + ex.getSQLState());
-			logger.error("VendorError: " + ex.getErrorCode());
-			throw new Exception("Error inesperado al consultar la B.D.");
+		Statement select = conexion.createStatement();
+		ResultSet rs= select.executeQuery(sql);
+		if (rs.next()) {
+			logger.debug("Se recupero el item con legajo{} y password {}", rs.getString("legajo"), rs.getString("password"));
+			this.legajo = rs.getInt("legajo");
+			autenticado = true;
 		}
 		return autenticado;
 	}
