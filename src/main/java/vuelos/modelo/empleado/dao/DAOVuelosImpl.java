@@ -34,17 +34,9 @@ public class DAOVuelosImpl implements DAOVuelos {
 
 	@Override
 	public ArrayList<InstanciaVueloBean> recuperarVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen, UbicacionesBean destino)  throws Exception {
-		/** 
-		 * TODO EMPEZADO Debe retornar una lista de vuelos disponibles para ese día con origen y destino según los parámetros. 
-		 *      Debe propagar una excepción si hay algún error en la consulta.    
-		 *      
-		 *      Nota: para acceder a la B.D. utilice la propiedad "conexion" que ya tiene una conexión
-		 *      establecida con el servidor de B.D. (inicializada en el constructor DAOVuelosImpl(...)).  
-		 */
-		//Datos estáticos de prueba. Quitar y reemplazar por código que recupera los datos reales.
+		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String sql = "SELECT DISTINCT nro_vuelo, nombre_aero_sale, hora_sale, nombre_aero_llega, hora_llega, modelo, tiempo_estimado FROM vuelos_disponibles WHERE fecha = '"+sdf.format(fechaVuelo)+"' AND ciudad_sale = '"+origen.getCiudad()+"' AND estado_sale = '"+origen.getEstado()+"' AND pais_sale = '"+origen.getPais()+"' AND ciudad_llega = '"+destino.getCiudad()+"' AND estado_llega = '"+destino.getEstado()+"' AND pais_llega = '"+destino.getPais()+"';";
-		//Chequear que todos valgan
 		
 		logger.debug("SQL: {}",sql);
 		ArrayList<InstanciaVueloBean> resultado = new ArrayList<InstanciaVueloBean>();  
@@ -54,7 +46,7 @@ public class DAOVuelosImpl implements DAOVuelos {
 			 ResultSet rs= select.executeQuery(sql);
 			 
 			 while (rs.next()) {
-					logger.debug("Se recuperó el item  nro_vuelo {} ", rs.getString("nro_vuelo")); //TODO COMPLETAR
+					logger.debug("Se recuperó el item  nro_vuelo {} ", rs.getString("nro_vuelo")); //TODO completar datos para consulta
 					
 					AeropuertoBean v_salida = new AeropuertoBeanImpl();
 					v_salida.setNombre(rs.getString("nombre_aero_sale"));
@@ -65,6 +57,8 @@ public class DAOVuelosImpl implements DAOVuelos {
 					v_llegada.setUbicacion(destino);
 					
 					InstanciaVueloBean v= new InstanciaVueloBeanImpl(); 
+					java.sql.Date fecha_vuelo = new java.sql.Date(fechaVuelo.getTime());
+					v.setFechaVuelo(fecha_vuelo);
 					v.setNroVuelo(rs.getString("nro_vuelo"));
 					v.setAeropuertoSalida(v_salida);
 					v.setAeropuertoLlegada(v_llegada);
@@ -82,23 +76,16 @@ public class DAOVuelosImpl implements DAOVuelos {
 		}
 		
 		return resultado;
-		// Fin datos estáticos de prueba.
 	}
 
 	@Override
 	public ArrayList<DetalleVueloBean> recuperarDetalleVuelo(InstanciaVueloBean vuelo) throws Exception {
-		/** 
-		 * TODO EMPEZADO Debe retornar una lista de clases, precios y asientos disponibles de dicho vuelo.		   
-		 *      Debe propagar una excepción si hay algún error en la consulta.    
-		 *      
-		 *      Nota: para acceder a la B.D. utilice la propiedad "conexion" que ya tiene una conexión
-		 *      establecida con el servidor de B.D. (inicializada en el constructor DAOVuelosImpl(...)).
-		 */
-		//Datos estáticos de prueba. Quitar y reemplazar por código que recupera los datos reales.
-		DAOVuelosDatosPrueba.generarDetalles(vuelo);
+		
 		ArrayList<DetalleVueloBean> resultado = new ArrayList<DetalleVueloBean>();
-		System.out.println("Entro a recuperarDetallevuelos");
-		String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '"+vuelo.getNroVuelo()+"';";
+		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
+		String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '"+vuelo.getNroVuelo()+"' AND fecha = '"+sdf.format(vuelo.getFechaVuelo())+"' AND hora_sale = '"+vuelo.getHoraSalida()+"';";
 		Statement select = conexion.createStatement();
 		ResultSet rs = select.executeQuery(sql);
 		
@@ -113,6 +100,5 @@ public class DAOVuelosImpl implements DAOVuelos {
 			resultado.add(dv);
 		}
 		return resultado; 
-		// Fin datos estáticos de prueba.
 	}
 }

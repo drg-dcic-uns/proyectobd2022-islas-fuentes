@@ -31,12 +31,6 @@ public class ModeloImpl implements Modelo {
 		Conexion.closeConnection(this.conexion);		
 	}
 
-	/**
-	 * TODO LISTO Utilizando la propiedad "conexión" ejecuta la consulta SQL recibida como parámetro y 
-	 *      retorna el resultado como un objeto ResulSet.
-	 *      Si se produce una excepción retorna null. El codigo para manejar la excepción ya 
-	 *      se encuentra implementado, solo se registran los errores en el log.     
-	 */
 	@Override
 	public ResultSet consulta(String sql) 
 	{
