@@ -45,14 +45,12 @@ public class DAOVuelosImpl implements DAOVuelos {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		String sql = "SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '"+sdf.format(fechaVuelo)+"' AND ciudad_sale = '"+origen.getCiudad()+"' AND estado_sale = '"+origen.getEstado()+"' AND pais_sale = '"+origen.getPais()+"' AND ciudad_llega = '"+destino.getCiudad()+"' AND estado_llega = '"+destino.getEstado()+"' AND pais_llega = '"+destino.getPais()+"';";
 		//Chequear que todos valgan
-		
 		logger.debug("SQL: {}",sql);
 		ArrayList<InstanciaVueloBean> resultado = new ArrayList<InstanciaVueloBean>();  
 		
 		try {
 			 Statement select = conexion.createStatement();
 			 ResultSet rs= select.executeQuery(sql);
-			 
 			 while (rs.next()) {
 					//logger.debug("Se recuperó el item  {}", rs.getString("nombre_batalla"), rs.getDate("fecha")); COMPLETAR
 					InstanciaVueloBean v= new InstanciaVueloBeanImpl(); 
