@@ -43,35 +43,31 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 
 	@Override
 	public boolean autenticarUsuarioAplicacion(String legajo, String password) throws Exception {
+		boolean autenticado = false;
 		logger.info("Se intenta autenticar el legajo {} con password {}", legajo, password);
-		/** 
-		 * TODO Código que autentica que exista un legajo de empleado y que el password corresponda a ese legajo
-		 *      (recuerde que el password guardado en la BD está encriptado con MD5) 
-		 *      En caso exitoso deberá registrar el legajo en la propiedad legajo y retornar true.
-		 *      Si la autenticación no es exitosa porque el legajo no es válido o el password es incorrecto
-		 *      deberá retornar falso y si hubo algún otro error deberá producir y propagar una excepción.
-		 */
+		String sql = "SELECT legajo, password FROM empleados WHERE legajo = '"+legajo+"' AND password = md5('"+password+"');";
 		
-		// Datos estáticos de prueba. Quitar y reemplazar por código que recupera los datos reales.  		
-		this.legajo = 1;
-		return true;
-		// Fin datos estáticos de prueba.
+		logger.debug("SQL: {}",sql);
+		try {
+			Statement select = conexion.createStatement();
+			ResultSet rs= select.executeQuery(sql);
+			if(rs.next()) {
+				this.legajo = rs.getInt("legajo");
+				autenticado = true;
+			}
+		} catch (SQLException ex) {
+			logger.error("SQLException: " + ex.getMessage());
+			logger.error("SQLState: " + ex.getSQLState());
+			logger.error("VendorError: " + ex.getErrorCode());
+			throw new Exception("Error inesperado al consultar la B.D.");
+		}
+		return autenticado;
 	}
 	
 	@Override
 	public ArrayList<String> obtenerTiposDocumento() {
 		logger.info("recupera los tipos de documentos.");
-		/** 
-		 * TODO EMPEZADO Debe retornar una lista de strings con los tipos de documentos. 
-		 *      Deberia propagar una excepción si hay algún error en la consulta.
-		 */
 		
-		/*
-		 * Datos estáticos de prueba. Quitar y reemplazar por código que recupera los datos reales. 
-		 * 
-		 *  Como no hay una tabla con los tipos de documento, se deberán recuperar todos los tipos validos
-		 *  de la tabla de pasajeros
-		 */
 		String sql = "SELECT DISTINCT doc_tipo FROM pasajeros";
 		Statement select;
 		ArrayList<String> tipos = new ArrayList<String>();
@@ -88,10 +84,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 			logger.error("SQLException: " + ex.getMessage());
 			logger.error("SQLState: " + ex.getSQLState());
 			logger.error("VendorError: " + ex.getErrorCode());
-			//Propagar error
 		}
-		// Fin datos estáticos de prueba.
-		
 		return tipos;
 	}		
 	
@@ -111,12 +104,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 	public ArrayList<UbicacionesBean> recuperarUbicaciones() throws Exception {
 		
 		logger.info("recupera las ciudades que tienen aeropuertos.");
-		/** 
-		 * TODO EMPEZADO Debe retornar una lista de UbicacionesBean con todas las ubicaciones almacenadas en la B.D. 
-		 *      Deberia propagar una excepción si hay algún error en la consulta.
-		 *      
-		 *      Reemplazar el siguiente código de prueba por los datos obtenidos desde la BD.
-		 */
+		
 		String sql = "SELECT * FROM ubicaciones;";
 		ArrayList<UbicacionesBean> ubicaciones = new ArrayList<UbicacionesBean>();
 		
