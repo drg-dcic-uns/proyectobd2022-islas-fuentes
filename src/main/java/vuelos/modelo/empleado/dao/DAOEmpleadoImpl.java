@@ -35,7 +35,9 @@ public class DAOEmpleadoImpl implements DAOEmpleado {
 		ResultSet rs = select.executeQuery(sql);
 		
 		rs.next();
-		logger.debug("Se recuperó el item  legajo {}, nombre {}, apellido {} ", rs.getString("legajo"), rs.getString("nombre"), rs.getString("apellido")); //TODO COMPLETAR datos para debug
+		logger.debug("Se recuperó el item  legajo {}, nombre {}, apellido {}, doc_tipo {}, doc_nro {}, direccion {}, telefono {}, password {}",
+				rs.getString("legajo"), rs.getString("nombre"), rs.getString("apellido"), rs.getString("doc_tipo"),
+				rs.getInt("doc_nro"), rs.getString("direccion"), rs.getString("telefono"), rs.getString("password"));
 		
 		EmpleadoBean empleado = new EmpleadoBeanImpl();
 		empleado.setLegajo(rs.getInt("legajo"));

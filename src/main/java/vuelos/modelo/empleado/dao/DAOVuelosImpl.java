@@ -43,13 +43,15 @@ public class DAOVuelosImpl implements DAOVuelos {
 		logger.debug("SQL: {}",sql);
 		ArrayList<InstanciaVueloBean> resultado = new ArrayList<InstanciaVueloBean>();  
 		
-		//TODO corregir consulta en sql y revisar
-		
 		try {
 			 Statement select = conexion.createStatement();
 			 ResultSet rs= select.executeQuery(sql);
 			 while (rs.next()) {
-					logger.debug("Se recuperó el item  nro_vuelo {} ", rs.getString("nro_vuelo")); //TODO completar datos para consulta
+					logger.debug("Se recuperó el item  nro_vuelo {}, nombre_aero_sale {}, hora_sale {}, "
+								+ "nombre_aero_llega {}, hora_llega {}, modelo {}, tiempo_estimado {}", 
+					rs.getString("nro_vuelo"), rs.getString("nombre_aero_sale"), rs.getTime("hora_sale"),
+					rs.getString("nombre_aero_llega"), rs.getTime("hora_llega"), rs.getString("modelo"),
+					rs.getTime("tiempo_estimado"));
 					
 					AeropuertoBean v_salida = new AeropuertoBeanImpl();
 					v_salida.setNombre(rs.getString("nombre_aero_sale"));
