@@ -234,8 +234,10 @@ CREATE TABLE asientos_reservados (
 # vuelos_disponibles = contiene informacion sobre cada instancia de vuelo
 
    CREATE VIEW vuelos_disponibles AS
-    SELECT sub_consulta1.*, sub_consulta2.clase, round(sub_consulta2.asientos_disponibles, 0) as asientos_disponibles, sub_consulta2.precio FROM
-	
+    SELECT sub_consulta1.*, sub_consulta2.clase, round(sub_consulta2.asientos_disponibles, 0) as asientos_disponibles,
+		   sub_consulta2.precio 
+	FROM
+		
 	   (SELECT vp.numero as nro_vuelo, ma.modelo, iv.fecha, s.dia as dia_sale, s.hora_sale, s.hora_llega, 
 			CASE WHEN (s.hora_sale > s.hora_llega) THEN (TIME(24 + s.hora_llega + s.hora_sale))
 			ELSE (TIME(s.hora_llega - s.hora_sale)) END as tiempo_estimado,
@@ -243,20 +245,25 @@ CREATE TABLE asientos_reservados (
 			a_sale.estado as estado_sale, a_sale.pais as pais_sale, 
 			vp.aeropuerto_llegada as codigo_aero_llega, a_llega.nombre as nombre_aero_llega, a_llega.ciudad as ciudad_llega,
 			a_llega.estado as estado_llega, a_llega.pais as pais_llega
-		FROM (vuelos_programados vp INNER JOIN salidas s INNER JOIN instancias_vuelo iv INNER JOIN modelos_avion ma
+		FROM 
+			(vuelos_programados vp INNER JOIN salidas s INNER JOIN instancias_vuelo iv INNER JOIN modelos_avion ma
 			INNER JOIN aeropuertos a_sale INNER JOIN aeropuertos a_llega)
-		WHERE (vp.numero = s.vuelo AND s.vuelo = iv.vuelo AND s.modelo_avion = ma.modelo AND a_sale.codigo = vp.aeropuerto_salida
-			AND a_llega.codigo = vp.aeropuerto_llegada)
+		WHERE (vp.numero = s.vuelo AND s.vuelo = iv.vuelo AND s.modelo_avion = ma.modelo 
+			  AND a_sale.codigo = vp.aeropuerto_salida AND a_llega.codigo = vp.aeropuerto_llegada)
 		) sub_consulta1
 		
 	INNER JOIN 
-		
-		(SELECT s.vuelo as vuelo, c.nombre as clase, (b.cant_asientos + c.porcentaje * 100) - ar.cantidad as asientos_disponibles, b.precio as precio FROM 
-			clases c INNER JOIN salidas s INNER JOIN asientos_reservados ar INNER JOIN brinda b
-			ON c.nombre = ar.clase AND ar.vuelo = s.vuelo AND ar.vuelo = b.vuelo AND ar.clase = b.clase AND s.dia = b.dia
+		(SELECT iv.fecha, s.dia, s.vuelo as vuelo, c.nombre as clase, 
+				(b.cant_asientos + c.porcentaje * b.cant_asientos) - ar.cantidad as asientos_disponibles,
+				b.precio as precio 
+		FROM 
+			clases c INNER JOIN salidas s INNER JOIN asientos_reservados ar INNER JOIN brinda b INNER JOIN instancias_vuelo iv
+		ON c.nombre = ar.clase AND iv.fecha = ar.fecha AND iv.dia = s.dia AND ar.vuelo = s.vuelo AND ar.vuelo = b.vuelo 
+		   AND ar.clase = b.clase AND s.dia = b.dia
 		) sub_consulta2
 		
-	ON sub_consulta1.nro_vuelo = sub_consulta2.vuelo;
+	ON sub_consulta1.nro_vuelo = sub_consulta2.vuelo AND sub_consulta1.dia_sale = sub_consulta2.dia
+	   AND sub_consulta1.fecha = sub_consulta2.fecha;
 
 
 # -------------------------------------------------------------------------
@@ -264,7 +271,7 @@ CREATE TABLE asientos_reservados (
 
 # admin
 CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
-GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost';
+GRANT ALL PRIVILEGES ON vuelos.* TO 'admin'@'localhost';
 
 # empleado
 CREATE USER 'empleado' IDENTIFIED BY 'empleado';
