@@ -37,8 +37,7 @@ public class DAOVuelosImpl implements DAOVuelos {
 	public ArrayList<InstanciaVueloBean> recuperarVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen, UbicacionesBean destino)  throws Exception {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		String sql = "SELECT DISTINCT * FROM vuelos_disponibles WHERE fecha = '"+sdf.format(fechaVuelo)+"' AND ciudad_sale = '"+origen.getCiudad()+"' AND estado_sale = '"+origen.getEstado()+"' AND pais_sale = '"+origen.getPais()+"' AND ciudad_llega = '"+destino.getCiudad()+"' AND estado_llega = '"+destino.getEstado()+"' AND pais_llega = '"+destino.getPais()+"';";
-		//Chequear que todos valgan
+		String sql = "SELECT DISTINCT nro_vuelo, nombre_aero_sale, hora_sale, nombre_aero_llega, hora_llega, modelo, tiempo_estimado FROM vuelos_disponibles WHERE fecha = '"+sdf.format(fechaVuelo)+"' AND ciudad_sale = '"+origen.getCiudad()+"' AND estado_sale = '"+origen.getEstado()+"' AND pais_sale = '"+origen.getPais()+"' AND ciudad_llega = '"+destino.getCiudad()+"' AND estado_llega = '"+destino.getEstado()+"' AND pais_llega = '"+destino.getPais()+"';";
 
 		logger.debug("SQL: {}",sql);
 		ArrayList<InstanciaVueloBean> resultado = new ArrayList<InstanciaVueloBean>();  
@@ -71,18 +70,7 @@ public class DAOVuelosImpl implements DAOVuelos {
 					v.setHoraLlegada(rs.getTime("hora_llega"));
 					v.setModelo(rs.getString("modelo"));
 					v.setTiempoEstimado(rs.getTime("tiempo_estimado"));
-					
-					boolean repeated = false;
-					for(int i=0; i < resultado.size(); i++) {
-						if(resultado.get(i).getNroVuelo().equals(v.getNroVuelo())) {
-							repeated = true;
-							i = resultado.size();
-						}
-					}
-					if(!repeated) {
-						resultado.add(v);
-					}
-					repeated = false;					
+					resultado.add(v);
 				  }
 		} catch (SQLException ex) {
 			logger.error("SQLException: " + ex.getMessage());
