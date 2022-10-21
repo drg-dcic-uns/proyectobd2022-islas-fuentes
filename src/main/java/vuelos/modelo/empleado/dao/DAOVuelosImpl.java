@@ -41,6 +41,8 @@ public class DAOVuelosImpl implements DAOVuelos {
 		logger.debug("SQL: {}",sql);
 		ArrayList<InstanciaVueloBean> resultado = new ArrayList<InstanciaVueloBean>();  
 		
+		//TODO corregir consulta en sql y revisar
+		
 		try {
 			 Statement select = conexion.createStatement();
 			 ResultSet rs= select.executeQuery(sql);

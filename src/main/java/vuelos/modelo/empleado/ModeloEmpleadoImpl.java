@@ -84,7 +84,6 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 			logger.error("SQLException: " + ex.getMessage());
 			logger.error("SQLState: " + ex.getSQLState());
 			logger.error("VendorError: " + ex.getErrorCode());
-			//Propagar error
 		}
 		return tipos;
 	}		
