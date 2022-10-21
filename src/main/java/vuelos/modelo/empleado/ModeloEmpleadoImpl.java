@@ -111,12 +111,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 	public ArrayList<UbicacionesBean> recuperarUbicaciones() throws Exception {
 		
 		logger.info("recupera las ciudades que tienen aeropuertos.");
-		/** 
-		 * TODO EMPEZADO Debe retornar una lista de UbicacionesBean con todas las ubicaciones almacenadas en la B.D. 
-		 *      Deberia propagar una excepción si hay algún error en la consulta.
-		 *      
-		 *      Reemplazar el siguiente código de prueba por los datos obtenidos desde la BD.
-		 */
+		
 		String sql = "SELECT * FROM ubicaciones;";
 		ArrayList<UbicacionesBean> ubicaciones = new ArrayList<UbicacionesBean>();
 		
