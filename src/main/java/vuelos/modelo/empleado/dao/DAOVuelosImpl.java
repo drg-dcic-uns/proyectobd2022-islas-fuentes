@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -58,7 +59,7 @@ public class DAOVuelosImpl implements DAOVuelos {
 					v_llegada.setNombre(rs.getString("nombre_aero_llega"));
 					v_llegada.setUbicacion(destino);
 					
-					InstanciaVueloBean v= new InstanciaVueloBeanImpl(); 
+					InstanciaVueloBean v = new InstanciaVueloBeanImpl(); 
 					java.sql.Date fecha_vuelo = new java.sql.Date(fechaVuelo.getTime());
 					v.setFechaVuelo(fecha_vuelo);
 					v.setNroVuelo(rs.getString("nro_vuelo"));
@@ -68,8 +69,19 @@ public class DAOVuelosImpl implements DAOVuelos {
 					v.setHoraLlegada(rs.getTime("hora_llega"));
 					v.setModelo(rs.getString("modelo"));
 					v.setTiempoEstimado(rs.getTime("tiempo_estimado"));
-					resultado.add(v);
-				  }	
+					
+					boolean repeated = false;
+					for(int i=0; i < resultado.size(); i++) {
+						if(resultado.get(i).getNroVuelo().equals(v.getNroVuelo())) {
+							repeated = true;
+							i = resultado.size();
+						}
+					}
+					if(!repeated) {
+						resultado.add(v);
+					}
+					repeated = false;					
+				  }
 		} catch (SQLException ex) {
 			logger.error("SQLException: " + ex.getMessage());
 			logger.error("SQLState: " + ex.getSQLState());
