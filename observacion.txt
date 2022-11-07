@@ -1,0 +1,3 @@
+Observación: Desde la computadora de uno de las integrantes del grupo el archivo .jar se ejecuta con normalidad,
+pero desde la computadora del otro integrante el programa no accede a la base de datos desde el ejecutable
+a menos que lo ejecute por consola. Usando el comando java -jar proyecto-vuelos-jar-with-dependencies.jar.
