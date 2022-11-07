@@ -37,6 +37,7 @@ public class DAOVuelosImpl implements DAOVuelos {
 	public ArrayList<InstanciaVueloBean> recuperarVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen, UbicacionesBean destino)  throws Exception {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+		
 		String sql = "SELECT DISTINCT nro_vuelo, codigo_aero_sale, nombre_aero_sale, hora_sale, codigo_aero_llega ,nombre_aero_llega, hora_llega, modelo, tiempo_estimado FROM vuelos_disponibles WHERE fecha = '"+sdf.format(fechaVuelo)+"' AND ciudad_sale = '"+origen.getCiudad()+"' AND estado_sale = '"+origen.getEstado()+"' AND pais_sale = '"+origen.getPais()+"' AND ciudad_llega = '"+destino.getCiudad()+"' AND estado_llega = '"+destino.getEstado()+"' AND pais_llega = '"+destino.getPais()+"';";
 
 		logger.debug("SQL: {}",sql);
@@ -91,6 +92,7 @@ public class DAOVuelosImpl implements DAOVuelos {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
+		//TODO : solo deben controlar que coincian vuelo y fecha, ademas usar try-catch
 		String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '"+vuelo.getNroVuelo()+"' AND fecha = '"+sdf.format(vuelo.getFechaVuelo())+"' AND hora_sale = '"+vuelo.getHoraSalida()+"';";
 		Statement select = conexion.createStatement();
 		ResultSet rs = select.executeQuery(sql);

@@ -48,6 +48,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		String sql = "SELECT legajo, password FROM empleados WHERE legajo = '"+legajo+"' AND password = md5('"+password+"');";
 		
 		logger.debug("SQL: {}",sql);
+		//TODO : Debe usar try-catch
 		Statement select = conexion.createStatement();
 		ResultSet rs= select.executeQuery(sql);
 		if (rs.next()) {
@@ -65,6 +66,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		String sql = "SELECT DISTINCT doc_tipo FROM pasajeros";
 		Statement select;
 		ArrayList<String> tipos = new ArrayList<String>();
+		//TODO : recibir consuulta en vez de usar Statement y ResultSet
 		try {
 			select = conexion.createStatement();
 			ResultSet rs = select.executeQuery(sql);
@@ -99,6 +101,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		
 		logger.info("recupera las ciudades que tienen aeropuertos.");
 		
+		//TODO : puede usar consulta que reciba string en ves de Statement y ResultSet, ademas debe usar try-catch
 		String sql = "SELECT * FROM ubicaciones;";
 		ArrayList<UbicacionesBean> ubicaciones = new ArrayList<UbicacionesBean>();
 		
@@ -114,9 +117,6 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 			ub.setHuso(rs.getInt("huso"));
 			ubicaciones.add(ub);
 		}
-		// Datos estáticos de prueba. Quitar y reemplazar por código que recupera las ubicaciones de la B.D. en una lista de UbicacionesBean		 
-		
-		// Fin datos estáticos de prueba.
 	
 		return ubicaciones;
 	}

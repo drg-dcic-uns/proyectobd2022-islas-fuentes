@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import vuelos.modelo.empleado.beans.EmpleadoBean;
 import vuelos.modelo.empleado.beans.EmpleadoBeanImpl;
 
+
 public class DAOEmpleadoImpl implements DAOEmpleado {
 
 	private static Logger logger = LoggerFactory.getLogger(DAOEmpleadoImpl.class);
@@ -49,6 +50,7 @@ public class DAOEmpleadoImpl implements DAOEmpleado {
 		empleado.setTelefono(rs.getString("telefono"));
 		empleado.setPassword(rs.getString("password")); 
 
+		//TODO : si ResultSet esta vacio debe retornar null , ademas debe haber try-catch
 		return empleado;
 	}
 
