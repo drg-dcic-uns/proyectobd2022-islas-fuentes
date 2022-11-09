@@ -92,20 +92,27 @@ public class DAOVuelosImpl implements DAOVuelos {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
-		//TODO : solo deben controlar que coincian vuelo y fecha, ademas usar try-catch
-		String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '"+vuelo.getNroVuelo()+"' AND fecha = '"+sdf.format(vuelo.getFechaVuelo())+"' AND hora_sale = '"+vuelo.getHoraSalida()+"';";
-		Statement select = conexion.createStatement();
-		ResultSet rs = select.executeQuery(sql);
-		
-		logger.debug("SQL: {}", sql);
-		
-		while (rs.next()) {
-			logger.debug("Se recupero el item con clase {} , precio {} y asientos_disponibles {}", rs.getString("clase"), rs.getString("precio"), rs.getString("asientos_disponibles"));
-			DetalleVueloBean dv = new DetalleVueloBeanImpl();
-			dv.setAsientosDisponibles(rs.getInt("asientos_disponibles"));
-			dv.setClase(rs.getString("clase"));
-			dv.setPrecio(rs.getFloat("precio"));
-			resultado.add(dv);
+		try {
+			
+			String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '"+vuelo.getNroVuelo()+"' AND fecha = '"+sdf.format(vuelo.getFechaVuelo())+"' ;";
+			Statement select = conexion.createStatement();
+			ResultSet rs = select.executeQuery(sql);
+			
+			logger.debug("SQL: {}", sql);
+			
+			while (rs.next()) {
+				logger.debug("Se recupero el item con clase {} , precio {} y asientos_disponibles {}", rs.getString("clase"), rs.getString("precio"), rs.getString("asientos_disponibles"));
+				DetalleVueloBean dv = new DetalleVueloBeanImpl();
+				dv.setAsientosDisponibles(rs.getInt("asientos_disponibles"));
+				dv.setClase(rs.getString("clase"));
+				dv.setPrecio(rs.getFloat("precio"));
+				resultado.add(dv);
+			}
+			
+		} catch (SQLException ex) {
+			logger.error("SQLException: " + ex.getMessage());
+			logger.error("SQLState: " + ex.getSQLState());
+			logger.error("VendorError: " + ex.getErrorCode());
 		}
 		return resultado; 
 	}

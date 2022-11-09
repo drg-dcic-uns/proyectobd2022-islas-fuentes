@@ -48,13 +48,17 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		String sql = "SELECT legajo, password FROM empleados WHERE legajo = '"+legajo+"' AND password = md5('"+password+"');";
 		
 		logger.debug("SQL: {}",sql);
-		//TODO : Debe usar try-catch
-		Statement select = conexion.createStatement();
-		ResultSet rs= select.executeQuery(sql);
-		if (rs.next()) {
-			logger.debug("Se recupero el item con legajo{} y password {}", rs.getString("legajo"), rs.getString("password"));
-			this.legajo = rs.getInt("legajo");
-			autenticado = true;
+		try {
+			ResultSet rs= consulta(sql);
+			if (rs.next()) {
+				logger.debug("Se recupero el item con legajo{} y password {}", rs.getString("legajo"), rs.getString("password"));
+				this.legajo = rs.getInt("legajo");
+				autenticado = true;
+			}
+		} catch (SQLException ex) {
+			logger.error("SQLException: " + ex.getMessage());
+			logger.error("SQLState: " + ex.getSQLState());
+			logger.error("VendorError: " + ex.getErrorCode());
 		}
 		return autenticado;
 	}
@@ -64,12 +68,9 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		logger.info("recupera los tipos de documentos.");
 		
 		String sql = "SELECT DISTINCT doc_tipo FROM pasajeros";
-		Statement select;
 		ArrayList<String> tipos = new ArrayList<String>();
-		//TODO : recibir consuulta en vez de usar Statement y ResultSet
 		try {
-			select = conexion.createStatement();
-			ResultSet rs = select.executeQuery(sql);
+			ResultSet rs = consulta(sql);
 			
 			while(rs.next()) {
 				logger.debug("Se recupero el item con tipo {}", rs.getString("doc_tipo"));
@@ -101,21 +102,25 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		
 		logger.info("recupera las ciudades que tienen aeropuertos.");
 		
-		//TODO : puede usar consulta que reciba string en ves de Statement y ResultSet, ademas debe usar try-catch
 		String sql = "SELECT * FROM ubicaciones;";
 		ArrayList<UbicacionesBean> ubicaciones = new ArrayList<UbicacionesBean>();
 		
-		Statement select = conexion.createStatement();
-		ResultSet rs = select.executeQuery(sql);
-		
-		while (rs.next()) {
-			logger.debug("Se recupero el item con pais {} , estado {} , ciudad {} y huso {}", rs.getString("pais"), rs.getString("estado"), rs.getString("ciudad"), rs.getInt("huso"));
-			UbicacionesBean ub = new UbicacionesBeanImpl();
-			ub.setCiudad(rs.getString("ciudad"));
-			ub.setEstado(rs.getString("estado"));
-			ub.setPais(rs.getString("pais"));
-			ub.setHuso(rs.getInt("huso"));
-			ubicaciones.add(ub);
+		try {
+			ResultSet rs = consulta(sql);
+			
+			while (rs.next()) {
+				logger.debug("Se recupero el item con pais {} , estado {} , ciudad {} y huso {}", rs.getString("pais"), rs.getString("estado"), rs.getString("ciudad"), rs.getInt("huso"));
+				UbicacionesBean ub = new UbicacionesBeanImpl();
+				ub.setCiudad(rs.getString("ciudad"));
+				ub.setEstado(rs.getString("estado"));
+				ub.setPais(rs.getString("pais"));
+				ub.setHuso(rs.getInt("huso"));
+				ubicaciones.add(ub);
+			}
+		} catch (SQLException ex) {
+			logger.error("SQLException: " + ex.getMessage());
+			logger.error("SQLState: " + ex.getSQLState());
+			logger.error("VendorError: " + ex.getErrorCode());
 		}
 	
 		return ubicaciones;
