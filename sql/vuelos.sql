@@ -338,10 +338,90 @@ CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN
 DELIMITER ;
 
 USE vuelos;
-DELIMITER !
-CREATE PROCEDURE reservaIdaYVuelta() # Parametros
+DELIMITER ! 
+CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN nombre_clase_ida VARCHAR(20),IN vuelo_vuelta VARCHAR(10), IN fecha_vuelta DATE, IN nombre_clase_vuelta VARCHAR(20) , IN tipo_doc VARCHAR(15), IN nro_doc INT(15), IN nro_legajo INT(20))
   BEGIN
-    # Implementacion
+
+    # declaracion de variables
+    DECLARE cant_asientos_ida INT(15);
+    DECLARE cant_asientos_vuelta INT(15);
+    DECLARE cant_reservados_ida INT(15);
+    DECLARE cant_reservados_vuelta INT(15);
+    DECLARE dia_ida VARCHAR(2);
+    DECLARE dia_vuelta VARCHAR(2);
+    DECLARE estado_reserva VARCHAR(15);
+    DECLARE vencimiento_reserva DATE;
+    DECLARE nro_reserva INT(20); 
+
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+      BEGIN
+        SELECT 'SQLEXCEPTION!, transaccion abordata' AS resultado;
+        ROLLBACK;
+      END;
+    START TRANSACTION;
+
+    #Chequear que existan las instancias de vuelos
+    IF EXISTS (SELECT * FROM vuelos.instancias_vuelo WHERE vuelo = vuelo_ida AND fecha = fecha_ida) AND
+      EXISTS (SELECT * FROM vuelos.instancias_vuelo WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta) THEN
+
+      SELECT dia INTO dia_ida
+      FROM vuelos.instancias_vuelo WHERE vuelo = vuelo_ida AND fecha = fecha_ida;
+      
+      SELECT dia INTO dia_vuelta
+      FROM vuelos.instancias_vuelo WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta;
+
+      #Chequear que ambas instancias brinden la clase deseada
+      IF EXISTS (SELECT * FROM vuelos.brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida) AND
+        EXISTS (SELECT * FROM vuelos.brinda WHERE vuelo = vuelo_vuelta AND clase = nombre_clase_vuelta) THEN
+        
+        SELECT cant_asientos INTO cant_asientos_ida
+        FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida AND dia = dia_ida FOR UPDATE;
+
+        SELECT cant_asientos INTO cant_asientos_vuelta
+        FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida AND dia = dia_ida FOR UPDATE;
+
+        #Chequear que halla asientos asientos disponibles para esa clase
+        IF cant_asientos_ida > 0 AND cant_asientos_vuelta THEN
+          SELECT cantidad into cant_reservados_ida
+          FROM asientos_reservados WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase_ida FOR UPDATE;
+
+          SELECT cantidad into cant_reservados_vuelta
+          FROM asientos_reservados WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase_vuelta FOR UPDATE;
+
+          IF cant_asientos_ida < cant_reservados_ida OR cant_asientos_vuelta < cant_asientos_vuelta < cant_reservados_vuelta THEN
+            SET estado_reserva = 'En Espera';
+          ELSE
+            SET estado_reserva = 'Confirmada';
+          END IF;
+
+          #Actualizar BD
+          SET vencimiento_reserva = DATE_SUB(fecha_ida, INTERVAL 15 DAY) ;
+
+          INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
+          VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
+
+          SELECT numero INTO nro_reserva
+          FROM reservas WHERE numero = LAST_INSERT_ID();
+
+          INSERT INTO reserva_vuelo_clase(numero, vuelo, fecha_vuelo, clase)
+          VALUES (nro_reserva, vuelo_ida, fecha_ida, nombre_clase_ida);
+
+          INSERT INTO reserva_vuelo_clase(numero, vuelo, fecha_vuelo, clase)
+          VALUES (nro_reserva, vuelo_vuelta, fecha_vuelta, nombre_clase_vuelta);
+
+          SELECT nro_reserva AS numero_reserva;
+        ELSE
+          SELECT 'Error: no hay asientos disponibles en alguno o ambos vuelos' AS resultado;
+        END IF;
+      ELSE
+        SELECT 'Error: alguno o ambos de los vuelos no brinda la clase solicitada' AS resultado;
+      END IF;
+    ELSE
+      SELECT 'Error: alguna o ambas instancias de vuelo no existen' AS resultado;
+    END IF;
+
+    COMMIT;
+
   END; !
 DELIMITER ;
 # -------------------------------------------------------------------------
