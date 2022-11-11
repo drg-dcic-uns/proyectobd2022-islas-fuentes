@@ -424,6 +424,41 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
 
   END; !
 DELIMITER ;
+
+# -------------------------------------------------------------------------
+# Creación de triggers
+
+DELIMITER !
+  CREATE TRIGGER inicializar_reservas AFTER INSERT ON instancias_vuelo
+  FOR EACH ROW
+  BEGIN
+
+    # Declaracion de variables
+    DECLARE nombre_clase VARCHAR(20);
+    DECLARE fin BOOLEAN DEFAULT false;
+
+    # Declaramos un cursor para consultar las clases que brinda
+    DECLARE C CURSOR FOR SELECT clase FROM brinda WHERE vuelo = NEW.vuelo AND dia = NEW.dia;
+
+    # Definimos operacion a realizar luego de que fetch falla
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET fin = true;
+
+    #Abrimos el cursor y le ponemos el primer valor
+    OPEN C;
+    FETCH C INTO nombre_clase;
+
+    # Ciclar con las clases que brinda la instancia de vuelo
+    WHILE NOT fin DO
+
+        #Insertar en asientos_reservados la cantidad 0 a partir del vuelo y clase
+        INSERT INTO asientos_reservados(vuelo, fecha, clase, cantidad)
+        VALUES (NEW.vuelo, NEW.fecha, nombre_clase, 0);
+
+      fetch C into nombre_clase;
+    END WHILE;
+    CLOSE C;
+  END; !
+DELIMITER ;
 # -------------------------------------------------------------------------
 # Creación de usuarios y otorgamiento de privilegios
 
@@ -450,4 +485,7 @@ GRANT DELETE ON vuelos.reserva_vuelo_clase TO 'empleado';
 # cliente
 CREATE USER 'cliente' IDENTIFIED BY 'cliente';
 GRANT SELECT ON vuelos_disponibles TO 'cliente';
+
+GRANT EXECUTE ON PROCEDURE vuelos.reservaSoloIda TO 'cliente';
+GRANT EXECUTE ON PROCEDURE vuelos.reservaIdaVuelta TO 'cliente';
 # ------------------------------------------------------------------------
