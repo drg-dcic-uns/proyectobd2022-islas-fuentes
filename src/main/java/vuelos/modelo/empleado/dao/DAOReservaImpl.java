@@ -2,9 +2,11 @@ package vuelos.modelo.empleado.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +15,9 @@ import vuelos.modelo.empleado.beans.DetalleVueloBean;
 import vuelos.modelo.empleado.beans.EmpleadoBean;
 import vuelos.modelo.empleado.beans.EmpleadoBeanImpl;
 import vuelos.modelo.empleado.beans.InstanciaVueloBean;
+import vuelos.modelo.empleado.beans.InstanciaVueloClaseBean;
 import vuelos.modelo.empleado.beans.PasajeroBean;
+import vuelos.modelo.empleado.beans.PasajeroBeanImpl;
 import vuelos.modelo.empleado.beans.ReservaBean;
 import vuelos.modelo.empleado.beans.ReservaBeanImpl;
 import vuelos.modelo.empleado.dao.datosprueba.DAOReservaDatosPrueba;
@@ -113,24 +117,49 @@ public class DAOReservaImpl implements DAOReserva {
 		// Datos estáticos de prueba. Quitar y reemplazar por código que recupera los
 		// datos reales.
 		ReservaBean reserva = null;
-		String sql = "SELECT * FROM reservas WHERE numero = "+codigoReserva+";";
+		ArrayList<InstanciaVueloClaseBean> vuelosClase = new ArrayList<InstanciaVueloClaseBean>();
 		
+		String sql = "select * from reservas WHERE numero = "+codigoReserva+";";
+		
+		//TODO hacer consultas auxiliares para obtener datos
+		String consultaEmpleado = "";
+		String consultaPasajero = "";
+		String consultaVuelosClase = "";
 		try {
+			
 			Statement select = conexion.createStatement();
 			ResultSet rs = select.executeQuery(sql);
 			
-			logger.debug("Se recuperó la reserva: {}, {}", reserva.getNumero(), reserva.getEstado());
+			logger.debug("Se recuperó la reserva: {}, {}", rs.getString("numero"), rs.getString("estado"));
 			
+			//TODO recuperar datos de la reserva
 			reserva = new ReservaBeanImpl();
-			EmpleadoBean empleado = new EmpleadoBeanImpl();
+			reserva.setNumero(rs.getInt("numero"));
+			reserva.setEstado(rs.getString("estado"));
+			reserva.setVencimiento(rs.getDate("vencimiento"));
+			reserva.setFecha(rs.getDate("fecha"));
 			
-			//reserva.setEmpleado(rs.getString("empleado"));
+			//TODO recuperar datos del empleado y setear todos sus atributos
+			EmpleadoBean empleado = new EmpleadoBeanImpl();
+			empleado.setNombre(rs.getString("nombre"));
+			
+			reserva.setEmpleado(empleado);
+			//TODO recuperar datos del pasajero y setear todos sus atributos
+			PasajeroBean pasajero = new PasajeroBeanImpl();
+			
+			reserva.setPasajero(pasajero);
+			//TODO ciclar en las reservas_vuelo_clase y meterlas en un ArrayList, si tiene 2 setear esIdaVuelta(); Usar bucle
+			if (vuelosClase.size() > 1) 
+				reserva.setEsIdaVuelta(true);
+			else
+				reserva.setEsIdaVuelta(false);
+			
 		} catch (SQLException ex) {
 			logger.error("SQLException: " + ex.getMessage());
 			logger.error("SQLState: " + ex.getSQLState());
 			logger.error("VendorError: " + ex.getErrorCode());
+			throw new Exception ("No se pudo recuperar la reserva");
 		}
-		
 		
 
 		return reserva;
