@@ -482,10 +482,11 @@ GRANT DELETE ON vuelos.reservas TO 'empleado';
 GRANT DELETE ON vuelos.pasajeros TO 'empleado';
 GRANT DELETE ON vuelos.reserva_vuelo_clase TO 'empleado';
 
+GRANT EXECUTE ON PROCEDURE vuelos.reservaSoloIda TO 'empleado';
+GRANT EXECUTE ON PROCEDURE vuelos.reservaIdaVuelta TO 'empleado';
+
 # cliente
 CREATE USER 'cliente' IDENTIFIED BY 'cliente';
 GRANT SELECT ON vuelos_disponibles TO 'cliente';
 
-GRANT EXECUTE ON PROCEDURE vuelos.reservaSoloIda TO 'cliente';
-GRANT EXECUTE ON PROCEDURE vuelos.reservaIdaVuelta TO 'cliente';
 # ------------------------------------------------------------------------
