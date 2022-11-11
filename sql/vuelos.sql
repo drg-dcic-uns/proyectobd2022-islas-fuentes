@@ -265,7 +265,85 @@ CREATE TABLE asientos_reservados (
 	ON sub_consulta1.nro_vuelo = sub_consulta2.vuelo AND sub_consulta1.dia_sale = sub_consulta2.dia
 	   AND sub_consulta1.fecha = sub_consulta2.fecha;
 
+# -------------------------------------------------------------------------
+# Creacion de procedimientos
 
+USE vuelos;
+DELIMITER ! 
+CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN nombre_clase VARCHAR(20), IN tipo_doc VARCHAR(15), IN nro_doc INT(15), IN nro_legajo INT(20))
+  BEGIN
+
+    # declaracion de variables
+    DECLARE cant_asientos_ida INT(15);
+    DECLARE cant_reservados INT(15);
+    DECLARE dia_ida VARCHAR(2);
+    DECLARE estado_reserva VARCHAR(15);
+    DECLARE vencimiento_reserva DATE;
+    DECLARE nro_reserva INT(20); 
+
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+      BEGIN
+        SELECT 'SQLEXCEPTION!, transaccion abordata' AS resultado;
+        ROLLBACK;
+      END;
+    START TRANSACTION;
+    #Chequear que exista la instancia de vuelos
+    IF EXISTS (SELECT * FROM vuelos.instancias_vuelo WHERE vuelo = vuelo_ida AND fecha = fecha_ida) THEN
+
+      SELECT dia INTO dia_ida
+      FROM vuelos.instancias_vuelo WHERE vuelo = vuelo_ida AND fecha = fecha_ida;
+
+      #Chequear que esa instancia brinde la clase deseada
+      IF EXISTS (SELECT * FROM vuelos.brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase) THEN
+        
+        SELECT cant_asientos INTO cant_asientos_ida
+        FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase AND dia = dia_ida FOR UPDATE;
+
+        #Chequear que halla asientos asientos disponibles para esa clase
+        IF cant_asientos_ida > 0 THEN
+          SELECT cantidad into cant_reservados
+          FROM asientos_reservados WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase FOR UPDATE;
+          IF cant_asientos_ida < cant_reservados THEN
+            SET estado_reserva = 'En Espera';
+          ELSE
+            SET estado_reserva = 'Confirmada';
+          END IF;
+
+          #Actualizar BD
+          SET vencimiento_reserva = DATE_SUB(fecha_ida, INTERVAL 15 DAY) ;
+
+          INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
+          VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
+
+          SELECT numero INTO nro_reserva
+          FROM reservas WHERE numero = LAST_INSERT_ID();
+
+          INSERT INTO reserva_vuelo_clase(numero, vuelo, fecha_vuelo, clase)
+          VALUES (nro_reserva, vuelo_ida, fecha_ida, nombre_clase);
+
+          SELECT 'La reserva se realizo con exito' AS resultado;
+        ELSE
+          SELECT 'Error: no hay asientos disponibles' AS resultado;
+        END IF;
+      ELSE
+        SELECT 'Error: el vuelo seleccionado no brinda la clase solicitada' AS resultado;
+      END IF;
+    ELSE
+      SELECT 'Error: no existe la instancia del vuelo seleccionado' AS resultado;
+    END IF;
+
+    COMMIT;
+
+  END; !
+DELIMITER ;
+
+USE vuelos;
+DELIMITER !
+CREATE PROCEDURE reservaIdaYVuelta() # Parametros
+  BEGIN
+    # Implementacion
+  END; !
+DELIMITER ;
 # -------------------------------------------------------------------------
 # Creación de usuarios y otorgamiento de privilegios
 
