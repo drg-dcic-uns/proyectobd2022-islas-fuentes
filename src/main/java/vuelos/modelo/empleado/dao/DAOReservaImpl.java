@@ -128,6 +128,18 @@ public class DAOReservaImpl implements DAOReserva {
 		
 		String sql = "select * from reservas WHERE numero = "+codigoReserva+";";
 		
+<<<<<<< HEAD
+=======
+		//TODO hacer consultas auxiliares para obtener datos
+		String consultaEmpleado = "select empleados.* from empleados JOIN reservas\r\n"
+			+ "where reservas.legajo = empleados.legajo AND reservas.numero"+codigoReserva+";";
+		
+		String consultaPasajero = "select pasajeros.* from pasajeros JOIN reservas\r\n"
+			+ "where reservas.doc_nro = pasajeros.doc_nro AND reservas.numero ="+codigoReserva+";";
+		
+		String consultaVuelosClase = "";
+		
+>>>>>>> 036876f39479a9dfe3bd3d27340370011eee9c53
 		try {
 			
 			Statement select = conexion.createStatement();
@@ -144,6 +156,7 @@ public class DAOReservaImpl implements DAOReserva {
 			reserva.setFecha(rs_reserva.getDate("fecha"));
 			
 			//TODO recuperar datos del empleado y setear todos sus atributos
+<<<<<<< HEAD
 			
 			Statement select_empleado = conexion.createStatement();
 			String consultaEmpleado = "SELECT * FROM empleados WHERE legajo = "+rs_reserva.getInt("legajo")+";";
@@ -159,10 +172,27 @@ public class DAOReservaImpl implements DAOReserva {
 			empleado.setTipoDocumento(rs_empleado.getString("doc_tipo"));
 			empleado.setTelefono(rs_empleado.getString("telefono"));
 			empleado.setPassword(rs_empleado.getString("password")); //Puede no ser necesario
+=======
+			rs = select.executeQuery(consultaEmpleado);
+			
+			logger.debug("Se recuperó el empleado: {}, {}, {}", rs.getString("legajo"), rs.getString("doc_nro"),
+						rs.getString("nombre"));
+			
+			EmpleadoBean empleado = new EmpleadoBeanImpl();
+			empleado.setLegajo(rs.getInt("legajo"));
+			empleado.setPassword(rs.getString("password"));
+			empleado.setTipoDocumento(rs.getString("doc_tipo"));
+			empleado.setNroDocumento(rs.getInt("doc_nro"));
+			empleado.setApellido(rs.getString("apellido"));
+			empleado.setNombre(rs.getString("nombre"));
+			empleado.setDireccion(rs.getString("direccion"));
+			empleado.setTelefono(rs.getString("telefono"));
+>>>>>>> 036876f39479a9dfe3bd3d27340370011eee9c53
 			
 			reserva.setEmpleado(empleado);
 			
 			//TODO recuperar datos del pasajero y setear todos sus atributos
+<<<<<<< HEAD
 			Statement select_pasajero = conexion.createStatement();
 			String consultaPasajero = "SELECT * FROM pasajeros WHERE doc_tipo = '"+rs_reserva.getString("doc_tipo")+"' AND "+rs_reserva.getInt("doc_nro")+";";
 			ResultSet rs_pasajero = select_pasajero.executeQuery(consultaPasajero);
@@ -179,6 +209,24 @@ public class DAOReservaImpl implements DAOReserva {
 			
 			reserva.setPasajero(pasajero);
 
+=======
+			rs = select.executeQuery(consultaPasajero);
+			
+			logger.debug("Se recuperó el pasajero: {}, {}, {}", rs.getString("doc_tipo"), rs.getString("doc_nro"),
+					rs.getString("nombre"));
+			
+			PasajeroBean pasajero = new PasajeroBeanImpl();
+			pasajero.setTipoDocumento(rs.getString("doc_tipo"));
+			pasajero.setNroDocumento(rs.getInt("doc_nro"));
+			pasajero.setApellido(rs.getString("apellido"));
+			pasajero.setNombre(rs.getString("nombre"));
+			pasajero.setDireccion(rs.getString("direccion"));
+			pasajero.setTelefono(rs.getString("telefono"));
+ 			pasajero.setNacionalidad(rs.getString("nacionalidad"));
+			
+			reserva.setPasajero(pasajero);
+			
+>>>>>>> 036876f39479a9dfe3bd3d27340370011eee9c53
 			//TODO ciclar en las reservas_vuelo_clase y meterlas en un ArrayList, si tiene 2 setear esIdaVuelta(); Usar bucle
 			Statement select_vuelosClase = conexion.createStatement();
 			String consultaVuelosClase = "SELECT * FROM reserva_vuelo_clase WHERE numero = "+codigoReserva+";";
