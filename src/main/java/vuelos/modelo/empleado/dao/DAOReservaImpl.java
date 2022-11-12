@@ -122,9 +122,14 @@ public class DAOReservaImpl implements DAOReserva {
 		String sql = "select * from reservas WHERE numero = "+codigoReserva+";";
 		
 		//TODO hacer consultas auxiliares para obtener datos
-		String consultaEmpleado = "";
-		String consultaPasajero = "";
+		String consultaEmpleado = "select empleados.* from empleados JOIN reservas\r\n"
+			+ "where reservas.legajo = empleados.legajo AND reservas.numero"+codigoReserva+";";
+		
+		String consultaPasajero = "select pasajeros.* from pasajeros JOIN reservas\r\n"
+			+ "where reservas.doc_nro = pasajeros.doc_nro AND reservas.numero ="+codigoReserva+";";
+		
 		String consultaVuelosClase = "";
+		
 		try {
 			
 			Statement select = conexion.createStatement();
@@ -140,14 +145,40 @@ public class DAOReservaImpl implements DAOReserva {
 			reserva.setFecha(rs.getDate("fecha"));
 			
 			//TODO recuperar datos del empleado y setear todos sus atributos
+			rs = select.executeQuery(consultaEmpleado);
+			
+			logger.debug("Se recuperó el empleado: {}, {}, {}", rs.getString("legajo"), rs.getString("doc_nro"),
+						rs.getString("nombre"));
+			
 			EmpleadoBean empleado = new EmpleadoBeanImpl();
+			empleado.setLegajo(rs.getInt("legajo"));
+			empleado.setPassword(rs.getString("password"));
+			empleado.setTipoDocumento(rs.getString("doc_tipo"));
+			empleado.setNroDocumento(rs.getInt("doc_nro"));
+			empleado.setApellido(rs.getString("apellido"));
 			empleado.setNombre(rs.getString("nombre"));
+			empleado.setDireccion(rs.getString("direccion"));
+			empleado.setTelefono(rs.getString("telefono"));
 			
 			reserva.setEmpleado(empleado);
+			
 			//TODO recuperar datos del pasajero y setear todos sus atributos
+			rs = select.executeQuery(consultaPasajero);
+			
+			logger.debug("Se recuperó el pasajero: {}, {}, {}", rs.getString("doc_tipo"), rs.getString("doc_nro"),
+					rs.getString("nombre"));
+			
 			PasajeroBean pasajero = new PasajeroBeanImpl();
+			pasajero.setTipoDocumento(rs.getString("doc_tipo"));
+			pasajero.setNroDocumento(rs.getInt("doc_nro"));
+			pasajero.setApellido(rs.getString("apellido"));
+			pasajero.setNombre(rs.getString("nombre"));
+			pasajero.setDireccion(rs.getString("direccion"));
+			pasajero.setTelefono(rs.getString("telefono"));
+ 			pasajero.setNacionalidad(rs.getString("nacionalidad"));
 			
 			reserva.setPasajero(pasajero);
+			
 			//TODO ciclar en las reservas_vuelo_clase y meterlas en un ArrayList, si tiene 2 setear esIdaVuelta(); Usar bucle
 			if (vuelosClase.size() > 1) 
 				reserva.setEsIdaVuelta(true);
