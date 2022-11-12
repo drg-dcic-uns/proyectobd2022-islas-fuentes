@@ -285,11 +285,11 @@ public class DAOReservaImpl implements DAOReserva {
 				
 				//Consulta el tiempo estimado desde la vista
 				Statement select_tiempo_estimado = conexion.createStatement();
-				consulta_aux = "SELECT * FROM vuelos_disponibles WHERE nro_vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND '"+instancia_vuelo.getModelo()+"' AND fecha = '"+instancia_vuelo.getFechaVuelo()+
-						" AND dia_sale = '"+instancia_vuelo.getDiaSalida()+"' AND hora_sale = '"+instancia_vuelo.getHoraSalida()+"' AND hora_llega = '"+instancia_vuelo.getHoraLlegada()+"';";
+				consulta_aux = "SELECT * FROM vuelos_disponibles WHERE nro_vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND modelo = '"+instancia_vuelo.getModelo()+"' AND fecha = '"+instancia_vuelo.getFechaVuelo()+
+						"' AND dia_sale = '"+instancia_vuelo.getDiaSalida()+"' AND hora_sale = '"+instancia_vuelo.getHoraSalida()+"' AND hora_llega = '"+instancia_vuelo.getHoraLlegada()+"';";
 				ResultSet rs_tiempo_estimado = select_tiempo_estimado.executeQuery(consulta_aux);
 				rs_tiempo_estimado.next();
-				instancia_vuelo.setTiempoEstimado(rs_tiempo_estimado.getTime("tiempo_estiamdo"));
+				instancia_vuelo.setTiempoEstimado(rs_tiempo_estimado.getTime("tiempo_estimado"));
 
 				System.out.println("Se consulta brinda");
 				//Consultamos SELECT * FROM brinda WHERE vuelo = nro_vuelo AND clase = rs_vuelosClase.getString("clase") AND dia = dia (antes se encuentra);
