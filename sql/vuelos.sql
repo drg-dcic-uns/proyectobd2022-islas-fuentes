@@ -320,6 +320,10 @@ CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN
           #Actualizar BD
           SET vencimiento_reserva = DATE_SUB(fecha_ida, INTERVAL 15 DAY) ;
 
+          UPDATE asientos_reservados
+          SET cantidad = cantidad + 1
+          WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase;
+
           INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
           VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
 
@@ -404,6 +408,14 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
 
           #Actualizar BD
           SET vencimiento_reserva = DATE_SUB(fecha_ida, INTERVAL 15 DAY) ;
+
+          UPDATE asientos_reservados
+          SET cantidad = cantidad + 1
+          WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase; 
+
+          UPDATE asientos_reservados
+          SET cantidad = cantidad + 1
+          WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase;
 
           INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
           VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
