@@ -411,11 +411,11 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
 
           UPDATE asientos_reservados
           SET cantidad = cantidad + 1
-          WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase; 
+          WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase_ida; 
 
           UPDATE asientos_reservados
           SET cantidad = cantidad + 1
-          WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase;
+          WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase_vuelta;
 
           INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
           VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
