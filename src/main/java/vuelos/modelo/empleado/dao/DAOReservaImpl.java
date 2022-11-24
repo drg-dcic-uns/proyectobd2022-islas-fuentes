@@ -134,7 +134,8 @@ public class DAOReservaImpl implements DAOReserva {
 			ResultSet rs_reserva = select.executeQuery(sql);
 			rs_reserva.next();
 			
-			logger.debug("Se recuperó la reserva: {}, {}", rs_reserva.getString("numero"), rs_reserva.getString("estado"));
+			logger.debug("Se recuperó la reserva: {}, {}", rs_reserva.getString("numero"), 
+														   rs_reserva.getString("estado"));
 			
 			//TODO recuperar datos de la reserva
 			reserva = new ReservaBeanImpl();
@@ -164,7 +165,9 @@ public class DAOReservaImpl implements DAOReserva {
 			
 			//TODO recuperar datos del pasajero y setear todos sus atributos
 			Statement select_pasajero = conexion.createStatement();
-			String consultaPasajero = "SELECT * FROM pasajeros WHERE doc_tipo = '"+rs_reserva.getString("doc_tipo")+"' AND "+rs_reserva.getInt("doc_nro")+";";
+			String consultaPasajero = "SELECT * FROM pasajeros WHERE "
+					+ "doc_tipo = '"+rs_reserva.getString("doc_tipo")+"' AND "+rs_reserva.getInt("doc_nro")+";";
+
 			ResultSet rs_pasajero = select_pasajero.executeQuery(consultaPasajero);
 			rs_pasajero.next();
 			
@@ -196,14 +199,18 @@ public class DAOReservaImpl implements DAOReserva {
 				
 				//Consultar select * from instancias_vuelo where vuelo = nro_vuelo and fecha = fecha; para saber el dia
 				Statement select_dia = conexion.createStatement();
-				consulta_aux = "SELECT * FROM instancias_vuelo WHERE vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND '"+instancia_vuelo.getFechaVuelo()+"';";
+				consulta_aux = "SELECT * FROM instancias_vuelo WHERE "
+						+ "vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND '"+instancia_vuelo.getFechaVuelo()+"';";
+
 				ResultSet rs_dia = select_dia.executeQuery(consulta_aux);
 				rs_dia.next();
 				instancia_vuelo.setDiaSalida(rs_dia.getString("dia"));
 				
 				//Consultar select * from salidas where vuelo = nro_vuelo and dia = dia
 				Statement select_horas = conexion.createStatement();
-				consulta_aux = "SELECT * FROM salidas WHERE vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND dia ='"+instancia_vuelo.getDiaSalida()+"';";
+				consulta_aux = "SELECT * FROM salidas WHERE"
+						+ " vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND dia ='"+instancia_vuelo.getDiaSalida()+"';";
+				
 				ResultSet rs_horas = select_horas.executeQuery(consulta_aux);
 				rs_horas.next();
 
@@ -264,14 +271,22 @@ public class DAOReservaImpl implements DAOReserva {
 				System.out.println("Se consulta husop");
 				//Busquemos los huso
 				Statement select_huso_llega = conexion.createStatement();
-				consulta_aux = "SELECT huso FROM ubicaciones WHERE pais = '"+ubicacion_aero_llega.getPais()+"'AND estado = '"+ubicacion_aero_llega.getEstado()+"'AND ciudad = '"+ubicacion_aero_llega.getCiudad()+"';";
+				consulta_aux = "SELECT huso FROM ubicaciones WHERE "
+						+ "pais = '"+ubicacion_aero_llega.getPais()+"'AND "
+						+ "estado = '"+ubicacion_aero_llega.getEstado()+"'AND "
+						+ "ciudad = '"+ubicacion_aero_llega.getCiudad()+"';";
+
 				ResultSet rs_huso_llega = select_huso_llega.executeQuery(consulta_aux);
 				rs_huso_llega.next();
 				
 				ubicacion_aero_llega.setHuso(rs_huso_llega.getInt("huso"));
 
 				Statement select_huso_sale = conexion.createStatement();
-				consulta_aux = "SELECT huso FROM ubicaciones WHERE pais = '"+ubicacion_aero_sale.getPais()+"'AND estado = '"+ubicacion_aero_sale.getEstado()+"'AND ciudad = '"+ubicacion_aero_sale.getCiudad()+"';";
+				consulta_aux = "SELECT huso FROM ubicaciones WHERE "
+						+ "pais = '"+ubicacion_aero_sale.getPais()+"'AND "
+						+ "estado = '"+ubicacion_aero_sale.getEstado()+"'AND "
+						+ "ciudad = '"+ubicacion_aero_sale.getCiudad()+"';";
+				
 				ResultSet rs_huso_sale = select_huso_sale.executeQuery(consulta_aux);
 				rs_huso_sale.next();
 				
@@ -285,8 +300,14 @@ public class DAOReservaImpl implements DAOReserva {
 				
 				//Consulta el tiempo estimado desde la vista
 				Statement select_tiempo_estimado = conexion.createStatement();
-				consulta_aux = "SELECT * FROM vuelos_disponibles WHERE nro_vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND modelo = '"+instancia_vuelo.getModelo()+"' AND fecha = '"+instancia_vuelo.getFechaVuelo()+
-						"' AND dia_sale = '"+instancia_vuelo.getDiaSalida()+"' AND hora_sale = '"+instancia_vuelo.getHoraSalida()+"' AND hora_llega = '"+instancia_vuelo.getHoraLlegada()+"';";
+				consulta_aux = "SELECT * FROM vuelos_disponibles WHERE "
+						+ "nro_vuelo = '"+instancia_vuelo.getNroVuelo()+"' AND"
+						+ " modelo = '"+instancia_vuelo.getModelo()+"' AND"
+						+ " fecha = '"+instancia_vuelo.getFechaVuelo()+
+						"' AND dia_sale = '"+instancia_vuelo.getDiaSalida()+"' AND "
+						+ "hora_sale = '"+instancia_vuelo.getHoraSalida()+"' AND "
+						+ "hora_llega = '"+instancia_vuelo.getHoraLlegada()+"';";
+				
 				ResultSet rs_tiempo_estimado = select_tiempo_estimado.executeQuery(consulta_aux);
 				rs_tiempo_estimado.next();
 				instancia_vuelo.setTiempoEstimado(rs_tiempo_estimado.getTime("tiempo_estimado"));
@@ -294,7 +315,11 @@ public class DAOReservaImpl implements DAOReserva {
 				System.out.println("Se consulta brinda");
 				//Consultamos SELECT * FROM brinda WHERE vuelo = nro_vuelo AND clase = rs_vuelosClase.getString("clase") AND dia = dia (antes se encuentra);
 				Statement select_brinda = conexion.createStatement();
-				consulta_aux = "SELECT * FROM brinda WHERE vuelo = '"+instancia_vuelo.getNroVuelo()+"'AND dia = '"+instancia_vuelo.getDiaSalida()+"' AND clase = '"+nombre_clase+"';";
+				consulta_aux = "SELECT * FROM brinda WHERE"
+						+ " vuelo = '"+instancia_vuelo.getNroVuelo()+"'AND "
+						+ "dia = '"+instancia_vuelo.getDiaSalida()+"' AND "
+						+ "clase = '"+nombre_clase+"';";
+			
 				ResultSet rs_brinda = select_brinda.executeQuery(consulta_aux);
 				rs_brinda.next();
 				

@@ -38,7 +38,15 @@ public class DAOVuelosImpl implements DAOVuelos {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		
-		String sql = "SELECT DISTINCT nro_vuelo, codigo_aero_sale, nombre_aero_sale, hora_sale, codigo_aero_llega ,nombre_aero_llega, hora_llega, modelo, tiempo_estimado FROM vuelos_disponibles WHERE fecha = '"+sdf.format(fechaVuelo)+"' AND ciudad_sale = '"+origen.getCiudad()+"' AND estado_sale = '"+origen.getEstado()+"' AND pais_sale = '"+origen.getPais()+"' AND ciudad_llega = '"+destino.getCiudad()+"' AND estado_llega = '"+destino.getEstado()+"' AND pais_llega = '"+destino.getPais()+"';";
+		String sql = "SELECT DISTINCT nro_vuelo, codigo_aero_sale, nombre_aero_sale, hora_sale, codigo_aero_llega ,"
+					+ "nombre_aero_llega, hora_llega, modelo, tiempo_estimado FROM vuelos_disponibles WHERE"
+						+ " fecha = '"+sdf.format(fechaVuelo)+"' AND "
+						+ "ciudad_sale = '"+origen.getCiudad()+"' AND "
+						+ "estado_sale = '"+origen.getEstado()+"' AND "
+						+ "pais_sale = '"+origen.getPais()+"' AND "
+						+ "ciudad_llega = '"+destino.getCiudad()+"' AND "
+						+ "estado_llega = '"+destino.getEstado()+"' AND"
+						+ " pais_llega = '"+destino.getPais()+"';";
 
 		logger.debug("SQL: {}",sql);
 		ArrayList<InstanciaVueloBean> resultado = new ArrayList<InstanciaVueloBean>();  
@@ -94,14 +102,21 @@ public class DAOVuelosImpl implements DAOVuelos {
 		
 		try {
 			
-			String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE nro_vuelo = '"+vuelo.getNroVuelo()+"' AND fecha = '"+sdf.format(vuelo.getFechaVuelo())+"' ;";
+			String sql = "SELECT clase, precio, asientos_disponibles FROM vuelos_disponibles WHERE"
+							+ " nro_vuelo = '"+vuelo.getNroVuelo()+"' AND"
+							+ " fecha = '"+sdf.format(vuelo.getFechaVuelo())+"' ;";
+			
 			Statement select = conexion.createStatement();
 			ResultSet rs = select.executeQuery(sql);
 			
 			logger.debug("SQL: {}", sql);
 			
 			while (rs.next()) {
-				logger.debug("Se recupero el item con clase {} , precio {} y asientos_disponibles {}", rs.getString("clase"), rs.getString("precio"), rs.getString("asientos_disponibles"));
+				logger.debug("Se recupero el item con clase {} , precio {} y asientos_disponibles {}", 
+						rs.getString("clase"), 
+						rs.getString("precio"), 
+						rs.getString("asientos_disponibles"));
+				
 				DetalleVueloBean dv = new DetalleVueloBeanImpl();
 				dv.setAsientosDisponibles(rs.getInt("asientos_disponibles"));
 				dv.setClase(rs.getString("clase"));

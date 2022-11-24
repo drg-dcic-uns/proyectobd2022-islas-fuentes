@@ -36,9 +36,11 @@ public class DAOPasajeroImpl implements DAOPasajero {
 			ResultSet rs = select.executeQuery(sql);
 			
 			rs.next();
-			logger.debug("Se recupero el item con doc_tipo {}, doc_nro {}, apellido {}, nombre {}, direccion {} , telefono {} y nacionalida {}",
+			logger.debug("Se recupero el item con doc_tipo {}, doc_nro {}, apellido {}, "
+					+ "nombre {}, direccion {} , telefono {} y nacionalida {}",
 					rs.getString("doc_tipo"), rs.getString("doc_nro"), rs.getString("apellido"), 
-					rs.getString("nombre"), rs.getString("direccion"), rs.getString("telefono"), rs.getString("nacionalidad"));
+					rs.getString("nombre"), rs.getString("direccion"), rs.getString("telefono"),
+					rs.getString("nacionalidad"));
 			
 			pasajero = new PasajeroBeanImpl();
 			pasajero.setNombre(rs.getString("nombre"));

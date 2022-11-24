@@ -45,13 +45,18 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 	public boolean autenticarUsuarioAplicacion(String legajo, String password) throws Exception {
 		boolean autenticado = false;
 		logger.info("Se intenta autenticar el legajo {} con password {}", legajo, password);
-		String sql = "SELECT legajo, password FROM empleados WHERE legajo = '"+legajo+"' AND password = md5('"+password+"');";
+		
+		String sql = "SELECT legajo, password FROM empleados WHERE "
+					+ "legajo = '"+legajo+"' AND password = md5('"+password+"');";
 		
 		logger.debug("SQL: {}",sql);
+		
 		try {
 			ResultSet rs= consulta(sql);
 			if (rs.next()) {
-				logger.debug("Se recupero el item con legajo{} y password {}", rs.getString("legajo"), rs.getString("password"));
+				logger.debug("Se recupero el item con legajo{} y password {}", 
+							rs.getString("legajo"), rs.getString("password"));
+				
 				this.legajo = rs.getInt("legajo");
 				autenticado = true;
 			}
@@ -69,6 +74,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 		
 		String sql = "SELECT DISTINCT doc_tipo FROM pasajeros";
 		ArrayList<String> tipos = new ArrayList<String>();
+		
 		try {
 			ResultSet rs = consulta(sql);
 			
@@ -88,6 +94,7 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 	@Override
 	public EmpleadoBean obtenerEmpleadoLogueado() throws Exception {
 		logger.info("Solicita al DAO un empleado con legajo {}", this.legajo);
+		
 		if (this.legajo == null) {
 			logger.info("No hay un empleado logueado.");
 			throw new Exception("No hay un empleado logueado. La sesión terminó.");
@@ -109,7 +116,10 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 			ResultSet rs = consulta(sql);
 			
 			while (rs.next()) {
-				logger.debug("Se recupero el item con pais {} , estado {} , ciudad {} y huso {}", rs.getString("pais"), rs.getString("estado"), rs.getString("ciudad"), rs.getInt("huso"));
+				logger.debug("Se recupero el item con pais {} , estado {} , ciudad {} y huso {}",
+							rs.getString("pais"), rs.getString("estado"), 
+							rs.getString("ciudad"), rs.getInt("huso"));
+				
 				UbicacionesBean ub = new UbicacionesBeanImpl();
 				ub.setCiudad(rs.getString("ciudad"));
 				ub.setEstado(rs.getString("estado"));
@@ -128,9 +138,11 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 
 
 	@Override
-	public ArrayList<InstanciaVueloBean> obtenerVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen, UbicacionesBean destino) throws Exception {
+	public ArrayList<InstanciaVueloBean> obtenerVuelosDisponibles(Date fechaVuelo, UbicacionesBean origen,
+																UbicacionesBean destino) throws Exception {
 		
-		logger.info("Recupera la lista de vuelos disponibles para la fecha {} desde {} a {}.", fechaVuelo, origen, destino);
+		logger.info("Recupera la lista de vuelos disponibles para la fecha {} desde {} a {}.",
+					fechaVuelo, origen, destino);
 
 		DAOVuelos dao = new DAOVuelosImpl(this.conexion);		
 		return dao.recuperarVuelosDisponibles(fechaVuelo, origen, destino);
@@ -156,8 +168,10 @@ public class ModeloEmpleadoImpl extends ModeloImpl implements ModeloEmpleado {
 
 
 	@Override
-	public ReservaBean reservarSoloIda(PasajeroBean pasajero, InstanciaVueloBean vuelo, DetalleVueloBean detalleVuelo)
-			throws Exception {
+	public ReservaBean reservarSoloIda(PasajeroBean pasajero,
+									InstanciaVueloBean vuelo, 
+									DetalleVueloBean detalleVuelo) throws Exception {
+		
 		logger.info("Se solicita al modelo realizar una reserva solo ida");
 
 		EmpleadoBean empleadoLogueado = this.obtenerEmpleadoLogueado();
