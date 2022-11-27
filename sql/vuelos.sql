@@ -283,6 +283,7 @@ CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN
 
     # declaracion de variables
     DECLARE cant_asientos_ida INT(15);
+    DECLARE cant_asientos_ida_disponibles INT(15);
     DECLARE cant_reservados INT(15);
     DECLARE dia_ida VARCHAR(2);
     DECLARE estado_reserva VARCHAR(15);
@@ -304,11 +305,15 @@ CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN
       #Chequear que esa instancia brinde la clase deseada
       IF EXISTS (SELECT * FROM vuelos.brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase) THEN
 
-        SELECT cant_asientos INTO cant_asientos_ida
-        FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase AND dia = dia_ida FOR UPDATE;
+        SELECT asientos_disponibles INTO cant_asientos_ida_disponibles
+        FROM vuelos_disponibles WHERE nro_vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase FOR UPDATE;
 
         #Chequear que halla asientos asientos disponibles para esa clase
-        IF cant_asientos_ida > 0 THEN
+        IF cant_asientos_ida_disponibles > 0 THEN
+
+          SELECT cant_asientos INTO cant_asientos_ida
+          FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase AND dia = dia_ida FOR UPDATE;          
+
           SELECT cantidad into cant_reservados
           FROM asientos_reservados WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase FOR UPDATE;
           IF cant_asientos_ida < cant_reservados THEN
@@ -325,7 +330,7 @@ CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN
           WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase;
 
           INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
-          VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
+          VALUES (tipo_doc, nro_doc, nro_legajo, CURDATE() ,vencimiento_reserva,estado_reserva);
 
           SELECT numero INTO nro_reserva
           FROM reservas WHERE numero = LAST_INSERT_ID();
@@ -359,6 +364,8 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
     DECLARE cant_asientos_vuelta INT(15);
     DECLARE cant_reservados_ida INT(15);
     DECLARE cant_reservados_vuelta INT(15);
+    DECLARE cant_asientos_ida_disponibles INT(15);
+    DECLARE cant_asientos_vuelta_disponibles INT(15);
     DECLARE dia_ida VARCHAR(2);
     DECLARE dia_vuelta VARCHAR(2);
     DECLARE estado_reserva VARCHAR(15);
@@ -386,21 +393,28 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
       IF EXISTS (SELECT * FROM vuelos.brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida) AND
         EXISTS (SELECT * FROM vuelos.brinda WHERE vuelo = vuelo_vuelta AND clase = nombre_clase_vuelta) THEN
 
-        SELECT cant_asientos INTO cant_asientos_ida
-        FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida AND dia = dia_ida FOR UPDATE;
+        SELECT asientos_disponibles INTO cant_asientos_ida_disponibles
+        FROM vuelos_disponibles WHERE nro_vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase_ida FOR UPDATE;
 
-        SELECT cant_asientos INTO cant_asientos_vuelta
-        FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida AND dia = dia_ida FOR UPDATE;
+        SELECT asientos_disponibles INTO cant_asientos_vuelta_disponibles
+        FROM vuelos_disponibles WHERE nro_vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase_vuelta FOR UPDATE;
 
         #Chequear que halla asientos asientos disponibles para esa clase
-        IF cant_asientos_ida > 0 AND cant_asientos_vuelta THEN
+        IF cant_asientos_ida_disponibles > 0 AND cant_asientos_vuelta_disponibles > 0 THEN
+
+          SELECT cant_asientos INTO cant_asientos_ida
+          FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida AND dia = dia_ida FOR UPDATE;
+
+          SELECT cant_asientos INTO cant_asientos_vuelta
+          FROM brinda WHERE vuelo = vuelo_ida AND clase = nombre_clase_ida AND dia = dia_ida FOR UPDATE;
+
           SELECT cantidad into cant_reservados_ida
           FROM asientos_reservados WHERE vuelo = vuelo_ida AND fecha = fecha_ida AND clase = nombre_clase_ida FOR UPDATE;
 
           SELECT cantidad into cant_reservados_vuelta
           FROM asientos_reservados WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase_vuelta FOR UPDATE;
 
-          IF cant_asientos_ida < cant_reservados_ida OR cant_asientos_vuelta < cant_asientos_vuelta < cant_reservados_vuelta THEN
+          IF cant_asientos_ida < cant_reservados_ida OR cant_asientos_vuelta < cant_reservados_vuelta THEN
             SET estado_reserva = 'En Espera';
           ELSE
             SET estado_reserva = 'Confirmada';
@@ -418,7 +432,7 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
           WHERE vuelo = vuelo_vuelta AND fecha = fecha_vuelta AND clase = nombre_clase_vuelta;
 
           INSERT INTO reservas(doc_tipo, doc_nro, legajo, fecha, vencimiento, estado)
-          VALUES (tipo_doc, nro_doc, nro_legajo, fecha_ida,vencimiento_reserva,estado_reserva);
+          VALUES (tipo_doc, nro_doc, nro_legajo, CURDATE() ,vencimiento_reserva,estado_reserva);
 
           SELECT numero INTO nro_reserva
           FROM reservas WHERE numero = LAST_INSERT_ID();

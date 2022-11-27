@@ -166,7 +166,7 @@ public class DAOReservaImpl implements DAOReserva {
 			//TODO recuperar datos del pasajero y setear todos sus atributos
 			Statement select_pasajero = conexion.createStatement();
 			String consultaPasajero = "SELECT * FROM pasajeros WHERE "
-					+ "doc_tipo = '"+rs_reserva.getString("doc_tipo")+"' AND "+rs_reserva.getInt("doc_nro")+";";
+					+ "doc_tipo = '"+rs_reserva.getString("doc_tipo")+"' AND doc_nro = "+rs_reserva.getInt("doc_nro")+";";
 
 			ResultSet rs_pasajero = select_pasajero.executeQuery(consultaPasajero);
 			rs_pasajero.next();
