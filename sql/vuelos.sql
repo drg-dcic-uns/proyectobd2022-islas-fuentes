@@ -338,7 +338,7 @@ CREATE PROCEDURE reservaSoloIda (IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, IN
           INSERT INTO reserva_vuelo_clase(numero, vuelo, fecha_vuelo, clase)
           VALUES (nro_reserva, vuelo_ida, fecha_ida, nombre_clase);
 
-          SELECT nro_reserva AS numero_reserva;
+          SELECT 'Reserva exitosa' as resultado, nro_reserva AS numero_reserva;
         ELSE
           SELECT 'Error: no hay asientos disponibles' AS resultado;
         END IF;
@@ -443,7 +443,7 @@ CREATE PROCEDURE reservaIdaVuelta(IN vuelo_ida VARCHAR(10), IN fecha_ida DATE, I
           INSERT INTO reserva_vuelo_clase(numero, vuelo, fecha_vuelo, clase)
           VALUES (nro_reserva, vuelo_vuelta, fecha_vuelta, nombre_clase_vuelta);
 
-          SELECT nro_reserva AS numero_reserva;
+          SELECT 'Reserva exitosa' as resultado, nro_reserva AS numero_reserva;
         ELSE
           SELECT 'Error: no hay asientos disponibles en alguno o ambos vuelos' AS resultado;
         END IF;

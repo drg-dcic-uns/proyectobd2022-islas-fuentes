@@ -54,6 +54,9 @@ public class DAOReservaImpl implements DAOReserva {
 			ResultSet r = cstmt.getResultSet();
 			r.next();
 			
+			String resultado_consulta = r.getString("resultado");
+			if (resultado_consulta.contains("Error")) throw new Exception(resultado_consulta); 
+			
 			logger.debug("Reserva: {}, {}", r.getInt("numero_reserva"));
 			
 			resultado = r.getInt("numero_reserva");
@@ -83,7 +86,11 @@ public class DAOReservaImpl implements DAOReserva {
 			ResultSet r = cstmt.getResultSet();
 			r.next();
 			
-			logger.debug("Reserva: {}, {}", r.getInt("numero_reserva"));
+			String resultado_consulta = r.getString("resultado");
+			
+			if (resultado_consulta.contains("Error")) throw new Exception(resultado_consulta); 
+			
+			logger.debug("Reserva: {}, {}", r.getString("resultado"), r.getInt("numero_reserva"));
 			
 			resultado = r.getInt("numero_reserva");
 		}
@@ -214,13 +221,10 @@ public class DAOReservaImpl implements DAOReserva {
 				ResultSet rs_horas = select_horas.executeQuery(consulta_aux);
 				rs_horas.next();
 
-				System.out.println("Se asigna horas con "+instancia_vuelo.getNroVuelo()+" y "+instancia_vuelo.getDiaSalida());
 				instancia_vuelo.setHoraLlegada(rs_horas.getTime("hora_llega"));
-				System.out.println("Asigno hora llegada");
 				instancia_vuelo.setHoraSalida(rs_horas.getTime("hora_sale"));
 				instancia_vuelo.setModelo(rs_horas.getString("modelo_avion"));
 
-				System.out.println("Se consulta aero");
 				//Consultamos los vuelos programados con el numero de vuelo, sleect * from vuelos_programados Where numero = vuelo;
 				Statement select_aero = conexion.createStatement();
 				consulta_aux = "SELECT * FROM vuelos_programados WHERE numero = '"+instancia_vuelo.getNroVuelo()+"';";
@@ -237,7 +241,6 @@ public class DAOReservaImpl implements DAOReserva {
 				UbicacionesBean ubicacion_aero_llega = new UbicacionesBeanImpl();
 				UbicacionesBean ubicacion_aero_sale = new UbicacionesBeanImpl();
 
-				System.out.println("Se consulta aero llega");
 				//Busquemos los datos de cada aeropuerto
 				Statement select_datos_aero_llega = conexion.createStatement();
 				consulta_aux = "SELECT * FROM aeropuertos WHERE codigo = '"+aero_llega.getCodigo()+"';";
@@ -253,7 +256,6 @@ public class DAOReservaImpl implements DAOReserva {
 				ubicacion_aero_llega.setPais(rs_datos_aero_llega.getString("pais"));
 
 
-				System.out.println("Se cobnsutl aero vuelve");
 				Statement select_datos_aero_sale = conexion.createStatement();
 				consulta_aux = "SELECT * FROM aeropuertos WHERE codigo = '"+aero_sale.getCodigo()+"';";
 				ResultSet rs_datos_aero_sale = select_datos_aero_sale.executeQuery(consulta_aux);
@@ -268,7 +270,6 @@ public class DAOReservaImpl implements DAOReserva {
 				ubicacion_aero_sale.setPais(rs_datos_aero_sale.getString("pais"));
 				
 
-				System.out.println("Se consulta husop");
 				//Busquemos los huso
 				Statement select_huso_llega = conexion.createStatement();
 				consulta_aux = "SELECT huso FROM ubicaciones WHERE "
@@ -312,7 +313,6 @@ public class DAOReservaImpl implements DAOReserva {
 				rs_tiempo_estimado.next();
 				instancia_vuelo.setTiempoEstimado(rs_tiempo_estimado.getTime("tiempo_estimado"));
 
-				System.out.println("Se consulta brinda");
 				//Consultamos SELECT * FROM brinda WHERE vuelo = nro_vuelo AND clase = rs_vuelosClase.getString("clase") AND dia = dia (antes se encuentra);
 				Statement select_brinda = conexion.createStatement();
 				consulta_aux = "SELECT * FROM brinda WHERE"
